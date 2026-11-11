@@ -7,20 +7,20 @@
 <meta name="description" content="Nails Glez: uñas acrílicas, gel, rubber, nail art y pedicure. Agenda tu cita por Instagram o WhatsApp.">
 <meta property="og:title" content="Nails Glez · Uñas que se notan">
 <meta property="og:description" content="Acrílico, gel, rubber, nail art y pedicure. Agenda tu cita.">
-<meta name="theme-color" content="#2a1a1f">
+<meta name="theme-color" content="#e4007c">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💅</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&family=Manrope:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet">
 <style>
   /* ====== EDITA AQUÍ TUS COLORES ====== */
   :root{
-    --ink:#2a1a1f;       /* texto oscuro / fondo oscuro */
-    --cream:#fbf5f1;     /* fondo claro */
-    --blush:#f3d9d6;     /* rosa suave */
-    --rose:#c8576b;      /* rosa intenso (acento) */
-    --gold:#c9a36a;      /* dorado */
-    --muted:#7d6a6e;
+    --ink:#5c0033;       /* texto / fondos fuertes (magenta profundo) */
+    --cream:#fff0f7;     /* fondo rosa clarito */
+    --blush:#ffc6e5;     /* rosa chicle */
+    --rose:#e4007c;      /* ROSA MEXICANO */
+    --gold:#ffd6ec;      /* rosa brillo (acentos sobre fondo fuerte) */
+    --muted:#a0336d;
     --radius:22px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -33,25 +33,27 @@
 
   /* NAV */
   nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
-  nav.scrolled{background:rgba(251,245,241,.88);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(42,26,31,.08)}
+  nav.scrolled{background:rgba(255,240,247,.9);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(150,0,80,.08)}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
-  .logo{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:500;text-decoration:none;letter-spacing:-.02em}
-  .logo i{color:var(--rose)}
+  .logo{font-family:'Pacifico',cursive;font-size:1.7rem;text-decoration:none;color:var(--rose)}
+  .logo i{font-style:normal;color:var(--ink)}
   .links{display:flex;gap:2rem;align-items:center}
   .links a{text-decoration:none;font-size:.92rem;font-weight:500;opacity:.8}
   .links a:hover{opacity:1;color:var(--rose)}
   .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.85rem 1.5rem;border-radius:999px;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s;border:none;cursor:pointer}
   .btn:hover{transform:translateY(-2px)}
-  .btn-dark{background:var(--ink);color:var(--cream)}
-  .btn-dark:hover{box-shadow:0 10px 24px rgba(42,26,31,.25)}
-  .btn-rose{background:var(--rose);color:#fff}
-  .btn-rose:hover{box-shadow:0 10px 24px rgba(200,87,107,.35)}
+  .btn-dark{background:var(--rose);color:#fff}
+  .btn-dark:hover{box-shadow:0 10px 24px rgba(150,0,80,.25)}
+  .btn-rose{background:linear-gradient(135deg,#ff3fa4,#e4007c);color:#fff}
+  .btn-rose:hover{box-shadow:0 12px 28px rgba(228,0,124,.45)}
   .btn-ghost{border:1.5px solid currentColor;background:transparent}
   .menu-btn{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--ink)}
 
   /* HERO */
   .hero{min-height:100svh;display:grid;align-items:center;padding:110px 0 60px;position:relative;overflow:hidden}
-  .hero::before{content:"";position:absolute;width:70vw;height:70vw;max-width:820px;max-height:820px;right:-18vw;top:-10vw;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--blush),transparent 70%);z-index:-1}
+  .hero{background:radial-gradient(circle at 85% 20%,#ffb3db 0,transparent 45%),radial-gradient(circle at 5% 90%,#ffd6ec 0,transparent 40%),var(--cream)}
+  .hero::before{content:"";position:absolute;width:70vw;height:70vw;max-width:820px;max-height:820px;right:-18vw;top:-10vw;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ff8fc8,transparent 70%);opacity:.55;z-index:0}
+  .hero>.wrap{position:relative;z-index:1}
   .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
   .tag{display:inline-block;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--rose);margin-bottom:1.2rem}
   h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2.8rem,7vw,5.6rem);line-height:.98;letter-spacing:-.035em}
@@ -59,10 +61,10 @@
   .hero p.lead{font-size:1.15rem;color:var(--muted);max-width:470px;margin:1.6rem 0 2.2rem}
   .hero-cta{display:flex;gap:.8rem;flex-wrap:wrap}
   .hero-art{position:relative;aspect-ratio:4/5}
-  .hero-art .card{position:absolute;border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 60px -20px rgba(42,26,31,.35)}
+  .hero-art .card{position:absolute;border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 60px -20px rgba(150,0,80,.35)}
   .hero-art .c1{inset:0 18% 12% 0;transform:rotate(-3deg)}
-  .hero-art .c2{width:48%;aspect-ratio:3/4;right:0;bottom:0;transform:rotate(5deg);border:6px solid var(--cream)}
-  .badge{position:absolute;left:-14px;bottom:22%;background:var(--cream);padding:.9rem 1.2rem;border-radius:16px;box-shadow:0 14px 30px rgba(42,26,31,.15);font-size:.85rem;font-weight:700;display:flex;gap:.6rem;align-items:center;z-index:2}
+  .hero-art .c2{width:48%;aspect-ratio:3/4;right:0;bottom:0;transform:rotate(5deg);border:6px solid #fff}
+  .badge{position:absolute;left:-14px;bottom:22%;background:#fff;color:var(--rose);padding:.9rem 1.2rem;border-radius:16px;box-shadow:0 14px 30px rgba(150,0,80,.15);font-size:.85rem;font-weight:700;display:flex;gap:.6rem;align-items:center;z-index:2}
   .badge span{font-size:1.4rem}
 
   /* Fotos con respaldo: si falta la imagen se ve un degradado bonito */
@@ -71,7 +73,7 @@
   .ph::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(255,255,255,.35),transparent 55%);pointer-events:none}
 
   /* MARQUEE */
-  .marquee{background:var(--ink);color:var(--cream);padding:1.1rem 0;overflow:hidden;white-space:nowrap}
+  .marquee{background:var(--rose);color:var(--cream);padding:1.1rem 0;overflow:hidden;white-space:nowrap}
   .marquee-track{display:inline-flex;gap:3rem;animation:slide 28s linear infinite;font-family:'Fraunces',serif;font-size:1.35rem;font-style:italic}
   .marquee-track b{color:var(--gold);font-style:normal}
   @keyframes slide{to{transform:translateX(-50%)}}
@@ -85,19 +87,19 @@
 
   /* SERVICIOS */
   .services{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-  .svc{background:#fff;border-radius:var(--radius);padding:2rem;transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden}
-  .svc:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(42,26,31,.3)}
+  .svc{background:#fff;border:2px solid #ffd6ec;border-radius:var(--radius);padding:2rem;transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden}
+  .svc:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(150,0,80,.3)}
   .svc .ico{width:54px;height:54px;border-radius:16px;background:var(--blush);display:grid;place-items:center;font-size:1.5rem;margin-bottom:1.4rem}
   .svc h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.45rem;margin-bottom:.4rem}
   .svc p{color:var(--muted);font-size:.95rem}
   .svc .price{margin-top:1.3rem;font-weight:700;font-size:.9rem;color:var(--rose)}
-  .svc.feat{background:var(--ink);color:var(--cream)}
-  .svc.feat p{color:#cbb8bc}
-  .svc.feat .ico{background:var(--rose)}
+  .svc.feat{background:linear-gradient(145deg,#ff3fa4,#e4007c 55%,#b8005f);color:#fff}
+  .svc.feat p{color:#ffd0ea}
+  .svc.feat .ico{background:rgba(255,255,255,.22)}
   .svc.feat .price{color:var(--gold)}
 
   /* GALERÍA */
-  .gallery-sec{background:var(--blush)}
+  .gallery-sec{background:linear-gradient(180deg,#ffc6e5,#ff9fd2)}
   .gallery{display:grid;grid-auto-flow:dense;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:1rem}
   .gallery .g{border-radius:18px;overflow:hidden;cursor:zoom-in;transition:transform .35s}
   .gallery .g:hover{transform:scale(1.025)}
@@ -112,20 +114,20 @@
 
   /* PROCESO */
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;counter-reset:s}
-  .step{border-top:1.5px solid var(--ink);padding-top:1.5rem}
+  .step{border-top:2px solid var(--rose);padding-top:1.5rem}
   .step::before{counter-increment:s;content:"0" counter(s);font-family:'Fraunces',serif;font-style:italic;font-size:3rem;color:var(--rose);display:block;line-height:1;margin-bottom:1rem}
   .step h3{font-size:1.15rem;margin-bottom:.4rem}
   .step p{color:var(--muted);font-size:.95rem}
 
   /* CTA / CONTACTO */
-  .contact{background:var(--ink);color:var(--cream);border-radius:36px;padding:clamp(2.5rem,6vw,5rem);display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;position:relative;overflow:hidden}
+  .contact{background:linear-gradient(135deg,#ff3fa4 0%,#e4007c 50%,#a3005a 100%);color:#fff;box-shadow:0 30px 60px -20px rgba(228,0,124,.55);border-radius:36px;padding:clamp(2.5rem,6vw,5rem);display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;position:relative;overflow:hidden}
   .contact::after{content:"💅";position:absolute;font-size:16rem;right:-2rem;bottom:-4rem;opacity:.07;transform:rotate(-15deg)}
   .contact h2 em{color:var(--gold)}
-  .contact p{color:#cbb8bc;margin:1.2rem 0 2rem;max-width:420px}
+  .contact p{color:#ffd0ea;margin:1.2rem 0 2rem;max-width:420px}
   .info{display:flex;flex-direction:column;gap:1.1rem;justify-content:center;position:relative;z-index:1}
-  .info a,.info div{display:flex;gap:1rem;align-items:center;text-decoration:none;padding:1rem 1.2rem;border:1px solid rgba(251,245,241,.15);border-radius:16px;transition:background .2s}
-  .info a:hover{background:rgba(251,245,241,.07)}
-  .info small{display:block;color:#a8949a;font-size:.75rem;text-transform:uppercase;letter-spacing:.12em}
+  .info a,.info div{display:flex;gap:1rem;align-items:center;text-decoration:none;padding:1rem 1.2rem;border:1px solid rgba(255,255,255,.15);border-radius:16px;transition:background .2s}
+  .info a:hover{background:rgba(255,255,255,.07)}
+  .info small{display:block;color:#ffa6d6;font-size:.75rem;text-transform:uppercase;letter-spacing:.12em}
   .info .i{font-size:1.4rem}
 
   footer{padding:2.5rem 0;text-align:center;color:var(--muted);font-size:.85rem}
@@ -264,7 +266,7 @@
       <div style="position:relative;z-index:1">
         <h2>¿Lista para tus <em>nuevas uñas</em>?</h2>
         <p>Los espacios se llenan rápido. Escríbeme y apartamos tu cita.</p>
-        <a href="#" class="btn btn-rose js-wa">Agendar por WhatsApp</a>
+        <a href="#" class="btn js-wa" style="background:#fff;color:var(--rose)">Agendar por WhatsApp 💖</a>
       </div>
       <div class="info">
         <a class="js-ig" href="#" target="_blank" rel="noopener"><span class="i">📸</span><span><small>Instagram</small><b id="igTxt">@nails.glez21</b></span></a>
