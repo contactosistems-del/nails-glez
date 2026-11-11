@@ -578,13 +578,10 @@
     const gate = document.getElementById("gate"), form = document.getElementById("gateForm"),
           inp = document.getElementById("gatePass"), err = document.getElementById("gateErr");
     const abrir = () => { gate.classList.add("off"); document.body.classList.remove("locked"); window.__reveal(); };
-    let ok = false; try { ok = sessionStorage.getItem("ng_ok") === "1"; } catch(e) {}
-    if (ok) { gate.style.display = "none"; abrir(); return; }
     setTimeout(() => inp.focus(), 300);
     form.addEventListener("submit", e => {
       e.preventDefault();
       if (norm(inp.value) === norm(CLAVE)) {
-        try { sessionStorage.setItem("ng_ok","1"); } catch(e) {}
         err.textContent = "💖";
         const r = inp.getBoundingClientRect();
         for (let i=0;i<14;i++){const b=document.createElement("span");b.className="burst";b.textContent=["✦","✧","♡"][i%3];const a=Math.PI*2*i/14,d=40+Math.random()*40;b.style.left=(r.left+r.width/2)+"px";b.style.top=(r.top+r.height/2)+"px";b.style.setProperty("--bx",Math.cos(a)*d+"px");b.style.setProperty("--by",Math.sin(a)*d+"px");document.body.append(b);setTimeout(()=>b.remove(),800)}
