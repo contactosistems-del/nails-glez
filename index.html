@@ -182,8 +182,8 @@
     .mrow:hover .mnum,.mrow:hover .mdesc,.mrow:hover .mcta{color:#fff}
     .mrow:hover .mcta{gap:.9rem}
   }
-  .mfloat{position:fixed;left:0;top:0;width:240px;height:300px;border-radius:16px;overflow:hidden;pointer-events:none;z-index:40;opacity:0;transform:translate(-50%,-50%) scale(.6) rotate(-6deg);transition:opacity .3s,transform .4s cubic-bezier(.2,.8,.2,1);box-shadow:0 30px 60px -15px rgba(92,0,51,.45)}
-  .mfloat.on{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-4deg)}
+   .mfloat{position:fixed;left:0;top:0;width:190px;height:240px;border-radius:16px;overflow:hidden;pointer-events:none;z-index:40;opacity:0;transform:translate(40px,-50%) scale(.6) rotate(-6deg);transition:opacity .3s,transform .4s cubic-bezier(.2,.8,.2,1);box-shadow:0 30px 60px -15px rgba(92,0,51,.45)}
+  .mfloat.on{opacity:1;transform:translate(40px,-50%) scale(1) rotate(4deg)}
   .mfloat img{width:100%;height:100%;object-fit:cover}
   @media (max-width:760px){
     .mrow{grid-template-columns:1fr 88px;grid-template-areas:"num thumb" "name thumb" "desc thumb" "cta thumb";gap:.35rem 1rem;padding:1.4rem 0}
@@ -537,7 +537,9 @@
       r.addEventListener("mouseenter",()=>{fi.src=r.dataset.img;fl.classList.add("on")});
       r.addEventListener("mouseleave",()=>fl.classList.remove("on"));
     });
-    addEventListener("mousemove",e=>{fl.style.left=e.clientX+"px";fl.style.top=e.clientY+"px"},{passive:true});
+    let tx=0,ty=0,cx=0,cy=0;
+    addEventListener("mousemove",e=>{tx=e.clientX;ty=e.clientY},{passive:true});
+    (function loop(){cx+=(tx-cx)*.15;cy+=(ty-cy)*.15;fl.style.left=cx+"px";fl.style.top=cy+"px";requestAnimationFrame(loop)})();
   })();
 </script>
 </body>
