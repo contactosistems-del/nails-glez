@@ -199,6 +199,21 @@
   }
   .burst{position:fixed;pointer-events:none;z-index:210;color:#ff3fa4;font-size:14px;text-shadow:0 0 6px #fff;animation:burst .8s ease-out forwards}
   @keyframes burst{from{opacity:1;transform:translate(-50%,-50%) scale(.4)}to{opacity:0;transform:translate(calc(-50% + var(--bx)),calc(-50% + var(--by))) scale(1.1) rotate(160deg)}}
+
+  /* ===== PANTALLA DE CONTRASEÑA ===== */
+  .gate{position:fixed;inset:0;z-index:500;display:grid;place-items:center;padding:6vw;background:radial-gradient(circle at 20% 15%,#ff8fc8,transparent 45%),radial-gradient(circle at 85% 85%,#ff3fa4,transparent 45%),linear-gradient(160deg,#ffd6ec,#ff9fd2);transition:opacity .7s ease,visibility .7s}
+  .gate.off{opacity:0;visibility:hidden}
+  .gate-box{width:min(420px,100%);background:rgba(255,255,255,.75);backdrop-filter:blur(14px);border:2px solid #fff;border-radius:28px;padding:2.4rem 2rem;text-align:center;box-shadow:0 30px 70px -20px rgba(150,0,80,.45)}
+  .gate-logo{font-family:'Pacifico',cursive;font-size:2.4rem;color:var(--rose);line-height:1.2}
+  .gate-logo i{font-style:normal;color:var(--ink)}
+  .gate p{color:var(--muted);margin:.6rem 0 1.6rem;font-size:.95rem}
+  .gate input{width:100%;padding:1rem 1.2rem;border-radius:999px;border:2px solid #ffc6e5;background:#fff;font:inherit;font-size:1rem;color:var(--ink);outline:none;text-align:center;transition:border-color .2s,box-shadow .2s}
+  .gate input:focus{border-color:var(--rose);box-shadow:0 0 0 5px rgba(228,0,124,.12)}
+  .gate .btn{width:100%;justify-content:center;margin-top:.9rem}
+  .gate .err{min-height:1.4em;margin-top:.8rem;font-size:.88rem;font-weight:700;color:var(--rose)}
+  .gate-box.shake{animation:shake .45s}
+  @keyframes shake{20%,60%{transform:translateX(-10px)}40%,80%{transform:translateX(10px)}}
+  body.locked{overflow:hidden}
   /* ================= ANIMACIONES ================= */
   /* Título: palabras que suben como si se pintaran */
   h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
@@ -250,7 +265,17 @@
   @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}h1 .w>span{transform:none}.gallery .g{clip-path:none}.rv{opacity:1;transform:none}}
 </style>
 </head>
-<body>
+<body class="locked">
+<div class="gate" id="gate">
+  <form class="gate-box" id="gateForm" autocomplete="off">
+    <div class="gate-logo">Nails <i>Glez</i></div>
+    <p>Antes de entrar… escribe la contraseña<br><b>Pista:</b> tu palabra favorita 💖</p>
+    <input id="gatePass" type="password" placeholder="Contraseña" aria-label="Contraseña">
+    <button class="btn btn-rose" type="submit">Entrar</button>
+    <div class="err" id="gateErr"></div>
+  </form>
+</div>
+
 <div class="progress" id="progress"></div>
 
 <!-- ============================================================
@@ -475,7 +500,7 @@
       });
     };
     wrap(h);
-    setTimeout(() => document.body.classList.add("loaded"), 80);
+    window.__reveal = () => setTimeout(() => document.body.classList.add("loaded"), 80);
   })();
   // Destellos en la portada
   (function(){
@@ -539,6 +564,32 @@
       r.target="_blank"; r.rel="noopener";
       r.addEventListener("mouseenter",e=>burst(e.clientX,e.clientY));
       r.addEventListener("click",e=>burst(e.clientX,e.clientY));
+    });
+  })();
+
+  // ===== CONTRASEÑA =====
+  (function(){
+    const CLAVE = "el amor de tu vida"; // <-- cambia aquí la contraseña
+    const norm = t => t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\s+/g," ").trim();
+    const gate = document.getElementById("gate"), form = document.getElementById("gateForm"),
+          inp = document.getElementById("gatePass"), err = document.getElementById("gateErr");
+    const abrir = () => { gate.classList.add("off"); document.body.classList.remove("locked"); window.__reveal(); };
+    let ok = false; try { ok = sessionStorage.getItem("ng_ok") === "1"; } catch(e) {}
+    if (ok) { gate.style.display = "none"; abrir(); return; }
+    setTimeout(() => inp.focus(), 300);
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      if (norm(inp.value) === norm(CLAVE)) {
+        try { sessionStorage.setItem("ng_ok","1"); } catch(e) {}
+        err.textContent = "💖";
+        const r = inp.getBoundingClientRect();
+        for (let i=0;i<14;i++){const b=document.createElement("span");b.className="burst";b.textContent=["✦","✧","♡"][i%3];const a=Math.PI*2*i/14,d=40+Math.random()*40;b.style.left=(r.left+r.width/2)+"px";b.style.top=(r.top+r.height/2)+"px";b.style.setProperty("--bx",Math.cos(a)*d+"px");b.style.setProperty("--by",Math.sin(a)*d+"px");document.body.append(b);setTimeout(()=>b.remove(),800)}
+        setTimeout(abrir, 450);
+      } else {
+        err.textContent = "Ups… esa no es. Intenta otra vez 💔";
+        form.classList.remove("shake"); void form.offsetWidth; form.classList.add("shake");
+        inp.select();
+      }
     });
   })();
 </script>
