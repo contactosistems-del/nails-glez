@@ -65,7 +65,7 @@
   .hero-art .c1{inset:0 18% 12% 0;transform:rotate(-3deg)}
   .hero-art .c2{width:48%;aspect-ratio:3/4;right:0;bottom:0;transform:rotate(5deg);border:6px solid #fff}
   .badge{position:absolute;left:-14px;bottom:22%;background:#fff;color:var(--rose);padding:.9rem 1.2rem;border-radius:16px;box-shadow:0 14px 30px rgba(150,0,80,.15);font-size:.85rem;font-weight:700;display:flex;gap:.6rem;align-items:center;z-index:2}
-  .badge span{font-size:1.4rem}
+  
 
   /* Fotos con respaldo: si falta la imagen se ve un degradado bonito */
   .ph{width:100%;height:100%;position:relative;background:var(--g,linear-gradient(135deg,#e9b9b5,#c8576b))}
@@ -121,7 +121,7 @@
 
   /* CTA / CONTACTO */
   .contact{background:linear-gradient(135deg,#ff3fa4 0%,#e4007c 50%,#a3005a 100%);color:#fff;box-shadow:0 30px 60px -20px rgba(228,0,124,.55);border-radius:36px;padding:clamp(2.5rem,6vw,5rem);display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;position:relative;overflow:hidden}
-  .contact::after{content:"💅";position:absolute;font-size:16rem;right:-2rem;bottom:-4rem;opacity:.07;transform:rotate(-15deg)}
+  .contact::after{content:"Glez";font-family:'Pacifico',cursive;position:absolute;font-size:13rem;right:-1rem;bottom:-5rem;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.25);transform:rotate(-8deg);pointer-events:none}
   .contact h2 em{color:var(--gold)}
   .contact p{color:#ffd0ea;margin:1.2rem 0 2rem;max-width:420px}
   .info{display:flex;flex-direction:column;gap:1.1rem;justify-content:center;position:relative;z-index:1}
@@ -164,6 +164,37 @@
   .svc.hair .hair-img img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transition:transform .8s}
   .svc.hair:hover .hair-img img{transform:scale(1.06)}
   @media (max-width:560px){.svc.hair{grid-template-columns:1fr}.svc.hair .hair-img{height:240px}}
+
+  /* ===== MENÚ DE SERVICIOS ===== */
+  .menu{border-top:1.5px solid var(--ink)}
+  .mrow{display:grid;grid-template-columns:70px 1.1fr 1.4fr auto;align-items:center;gap:1.5rem;padding:1.6rem .4rem;border-bottom:1px solid rgba(92,0,51,.18);text-decoration:none;position:relative;transition:padding .4s cubic-bezier(.2,.8,.2,1),color .3s}
+  .mrow::before{content:"";position:absolute;inset:0;background:var(--rose);transform:scaleY(0);transform-origin:bottom;transition:transform .45s cubic-bezier(.7,0,.2,1);z-index:-1}
+  .mnum{font-family:'Fraunces',serif;font-style:italic;font-size:1.1rem;color:var(--rose);transition:color .3s}
+  .mname{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(1.6rem,3.4vw,2.6rem);line-height:1.05;letter-spacing:-.02em}
+  .mdesc{color:var(--muted);font-size:.95rem;max-width:380px;transition:color .3s}
+  .mthumb{display:none}
+  .mcta{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:var(--rose);transition:color .3s,gap .3s}
+  .mcta svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2}
+  .mrow{isolation:isolate}
+  @media (hover:hover){
+    .mrow:hover{color:#fff;padding-left:1.4rem;padding-right:1.4rem}
+    .mrow:hover::before{transform:scaleY(1)}
+    .mrow:hover .mnum,.mrow:hover .mdesc,.mrow:hover .mcta{color:#fff}
+    .mrow:hover .mcta{gap:.9rem}
+  }
+  .mfloat{position:fixed;left:0;top:0;width:240px;height:300px;border-radius:16px;overflow:hidden;pointer-events:none;z-index:40;opacity:0;transform:translate(-50%,-50%) scale(.6) rotate(-6deg);transition:opacity .3s,transform .4s cubic-bezier(.2,.8,.2,1);box-shadow:0 30px 60px -15px rgba(92,0,51,.45)}
+  .mfloat.on{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-4deg)}
+  .mfloat img{width:100%;height:100%;object-fit:cover}
+  @media (max-width:760px){
+    .mrow{grid-template-columns:1fr 88px;grid-template-areas:"num thumb" "name thumb" "desc thumb" "cta thumb";gap:.35rem 1rem;padding:1.4rem 0}
+    .mnum{grid-area:num}.mname{grid-area:name}.mdesc{grid-area:desc;font-size:.9rem}.mcta{grid-area:cta;margin-top:.4rem}
+    .mthumb{display:block;grid-area:thumb;width:88px;height:110px;border-radius:12px;overflow:hidden;align-self:center}
+    .mthumb img{width:100%;height:100%;object-fit:cover}
+    .mfloat{display:none}
+  }
+  /* íconos de línea */
+  .info .i svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .badge .scr{font-family:'Pacifico',cursive;font-size:1.25rem;color:var(--rose);line-height:1}
   /* ================= ANIMACIONES ================= */
   /* Título: palabras que suben como si se pintaran */
   h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
@@ -198,8 +229,8 @@
   /* Galería: las fotos se destapan como cortina */
   .gallery .g{clip-path:inset(100% 0 0 0 round 18px);transition:clip-path 1.1s cubic-bezier(.7,0,.2,1),transform .35s}
   .gallery .g img{transform:scale(1.25);transition:transform 1.6s cubic-bezier(.2,.8,.2,1)}
-  .gallery .g.in{clip-path:inset(0 0 0 0 round 18px)}
-  .gallery .g.in img{transform:scale(1)}
+  .gallery.in .g,.gallery .g.in{clip-path:inset(0 0 0 0 round 18px)}
+  .gallery.in .g img,.gallery .g.in img{transform:scale(1)}
   .gallery .g:hover img{transform:scale(1.07);transition-duration:.6s}
   /* Pasos: número que se pinta */
   .step::before{background:linear-gradient(90deg,var(--rose) 50%,#ffc6e5 50%);background-size:200% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;color:transparent;transition:background-position 1.2s ease .2s}
@@ -247,7 +278,7 @@
 <header class="hero">
   <div class="wrap hero-grid">
     <div class="rv">
-      <span class="tag">✦ Nail Studio</span>
+      <span class="tag">Nail Studio · Alaciados</span>
       <h1 id="title">Uñas que <em>se notan<svg viewBox="0 0 300 20" preserveAspectRatio="none"><path d="M4 14 C60 4,120 18,170 9 S260 6,296 12"/></svg></em>, detalles que enamoran.</h1>
       <p class="lead">Acrílico, gel, rubber, diseños hechos a mano y alaciados. Llega con una idea y sal con las uñas que soñabas.</p>
       <div class="hero-cta">
@@ -258,7 +289,7 @@
     <div class="hero-art rv">
       <div class="card c1"><div class="ph" style="--g:linear-gradient(145deg,#f1c6c3,#c8576b 70%,#7a2f42)"><img src="img/hero-1.jpg" alt="Uñas vino con glitter"></div></div>
       <div class="card c2"><div class="ph" style="--g:linear-gradient(160deg,#f7e3d4,#c9a36a)"><img src="img/hero-2.jpg" alt="Uñas chrome rosa"></div></div>
-      <div class="badge"><span>✨</span>Diseños 100%<br>personalizados</div>
+      <div class="badge"><span class="scr">a mano</span><span style="font-size:.8rem;font-weight:700;color:var(--ink)">Cada diseño,<br>único como tú</span></div>
     </div>
   </div>
 </header>
@@ -273,20 +304,62 @@
 <section id="servicios">
   <div class="wrap">
     <div class="head rv">
-      <h2>Nuestros<br><em>servicios</em></h2>
-      <p>Cada set se hace con calma, con productos de calidad y cuidando la salud de tu uña natural.</p>
+      <h2>El <em>menú</em></h2>
+      <p>Cada set se hace con calma, con productos de calidad y cuidando tu uña natural. Toca un servicio y cotízalo directo por WhatsApp.</p>
     </div>
-    <div class="services">
-      <!-- Cambia los precios en cada "price" -->
-      <article class="svc rv"><div class="ico">💎</div><h3>Uñas acrílicas</h3><p>Largo y forma a tu gusto: almendra, coffin, stiletto o cuadrada.</p><div class="price">Pregunta por precio</div></article>
-      <article class="svc feat rv"><div class="ico">🎨</div><h3>Nail art</h3><p>Diseños a mano, pedrería, chrome, encapsulados y efectos. Trae tu foto de referencia.</p><div class="price">Desde · consulta</div></article>
-      <article class="svc rv"><div class="ico">✨</div><h3>Gel semipermanente</h3><p>Brillo que dura semanas sobre tu uña natural, sin extensiones.</p><div class="price">Pregunta por precio</div></article>
-      <article class="svc rv"><div class="ico">💪</div><h3>Rubber / nivelación</h3><p>Refuerza tu uña natural para que crezca fuerte y pareja.</p><div class="price">Pregunta por precio</div></article>
-      <article class="svc rv"><div class="ico">🦶</div><h3>Pedicure</h3><p>Limpieza, cuidado y color para que tus pies también luzcan.</p><div class="price">Pregunta por precio</div></article>
-      <article class="svc rv"><div class="ico">🔁</div><h3>Retoque y retiro</h3><p>Mantenimiento de tu set o retiro seguro sin maltratar la uña.</p><div class="price">Pregunta por precio</div></article>
-      <article class="svc hair rv"><div class="hair-txt"><div class="ico">💇‍♀️</div><span class="tag" style="margin:0 0 .4rem">✦ También</span><h3>Alaciados</h3><p>Cabello lacio, suave y con brillo espejo. Pregúntame por el tratamiento ideal para tu tipo de cabello.</p><div class="price">Pregunta por precio</div></div><div class="hair-img"><img src="img/g8.jpg" alt="Alaciado" loading="lazy"></div></article>
+    <div class="menu">
+      <a class="mrow rv js-svc" href="#" data-svc="Uñas acrílicas" data-img="img/g1.jpg">
+        <span class="mnum">01</span>
+        <span class="mname">Uñas acrílicas</span>
+        <span class="mdesc">Largo y forma a tu gusto: almendra, coffin, stiletto o cuadrada.</span>
+        <span class="mthumb"><img src="img/g1.jpg" alt="" loading="lazy"></span>
+        <span class="mcta">Cotizar <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="mrow rv js-svc" href="#" data-svc="Nail art" data-img="img/g4.jpg">
+        <span class="mnum">02</span>
+        <span class="mname">Nail art</span>
+        <span class="mdesc">Diseños a mano, pedrería, chrome, encapsulados y efectos. Trae tu foto de referencia.</span>
+        <span class="mthumb"><img src="img/g4.jpg" alt="" loading="lazy"></span>
+        <span class="mcta">Cotizar <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="mrow rv js-svc" href="#" data-svc="Gel semipermanente" data-img="img/g2.jpg">
+        <span class="mnum">03</span>
+        <span class="mname">Gel semipermanente</span>
+        <span class="mdesc">Brillo que dura semanas sobre tu uña natural, sin extensiones.</span>
+        <span class="mthumb"><img src="img/g2.jpg" alt="" loading="lazy"></span>
+        <span class="mcta">Cotizar <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="mrow rv js-svc" href="#" data-svc="Rubber / nivelación" data-img="img/g7.jpg">
+        <span class="mnum">04</span>
+        <span class="mname">Rubber / nivelación</span>
+        <span class="mdesc">Refuerza tu uña natural para que crezca fuerte y pareja.</span>
+        <span class="mthumb"><img src="img/g7.jpg" alt="" loading="lazy"></span>
+        <span class="mcta">Cotizar <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="mrow rv js-svc" href="#" data-svc="Pedicure" data-img="img/g5.jpg">
+        <span class="mnum">05</span>
+        <span class="mname">Pedicure</span>
+        <span class="mdesc">Limpieza, cuidado y color para que tus pies también luzcan.</span>
+        <span class="mthumb"><img src="img/g5.jpg" alt="" loading="lazy"></span>
+        <span class="mcta">Cotizar <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="mrow rv js-svc" href="#" data-svc="Retoque y retiro" data-img="img/g3.jpg">
+        <span class="mnum">06</span>
+        <span class="mname">Retoque y retiro</span>
+        <span class="mdesc">Mantenimiento de tu set o retiro seguro sin maltratar la uña.</span>
+        <span class="mthumb"><img src="img/g3.jpg" alt="" loading="lazy"></span>
+        <span class="mcta">Cotizar <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="mrow rv js-svc" href="#" data-svc="Alaciados" data-img="img/g8.jpg">
+        <span class="mnum">07</span>
+        <span class="mname">Alaciados</span>
+        <span class="mdesc">Cabello lacio, suave y con brillo espejo. Te recomiendo el tratamiento ideal para tu cabello.</span>
+        <span class="mthumb"><img src="img/g8.jpg" alt="" loading="lazy"></span>
+        <span class="mcta">Cotizar <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
     </div>
   </div>
+  <div class="mfloat" id="mfloat"><img alt=""></div>
 </section>
 
 <section id="galeria" class="gallery-sec">
@@ -296,15 +369,15 @@
       <p>Mira más diseños todos los días en Instagram.<br><a class="js-ig" href="#" target="_blank" rel="noopener" style="font-weight:700;color:var(--rose)">@nails.glez21 →</a></p>
     </div>
     <!-- Fotos reales de @nails.glez21 en img/g1.jpg ... g8.jpg -->
-    <div class="gallery rv" id="gallery">
-      <div class="g tall"><div class="ph"><img src="img/g1.jpg" alt="Cat eye café con animal print" style="object-position:center 40%" loading="lazy"></div></div>
-      <div class="g"><div class="ph"><img src="img/g2.jpg" alt="Cat eye azul" style="object-position:center 35%" loading="lazy"></div></div>
-      <div class="g"><div class="ph"><img src="img/g3.jpg" alt="Diseño luna y estrellas" style="object-position:center 45%" loading="lazy"></div></div>
-      <div class="g tall"><div class="ph"><img src="img/g4.jpg" alt="Diseño de mar con perlas" style="object-position:center 45%" loading="lazy"></div></div>
-      <div class="g wide"><div class="ph"><img src="img/g5.jpg" alt="Pedicure francés con cristales" style="object-position:center 45%" loading="lazy"></div></div>
-      <div class="g wide"><div class="ph"><img src="img/g6.jpg" alt="Pedicure rosa con foil plata" style="object-position:center 55%" loading="lazy"></div></div>
-      <div class="g"><div class="ph"><img src="img/g7.jpg" alt="Nude con hoja de oro" style="object-position:center 60%" loading="lazy"></div></div>
-      <div class="g"><div class="ph"><img src="img/g8.jpg" alt="Alaciado" style="object-position:center 30%" loading="lazy"></div></div>
+    <div class="gallery" id="gallery">
+      <div class="g tall"><div class="ph"><img src="img/g1.jpg" alt="Cat eye café con animal print" style="object-position:center 40%"></div></div>
+      <div class="g"><div class="ph"><img src="img/g2.jpg" alt="Cat eye azul" style="object-position:center 35%"></div></div>
+      <div class="g"><div class="ph"><img src="img/g3.jpg" alt="Diseño luna y estrellas" style="object-position:center 45%"></div></div>
+      <div class="g tall"><div class="ph"><img src="img/g4.jpg" alt="Diseño de mar con perlas" style="object-position:center 45%"></div></div>
+      <div class="g wide"><div class="ph"><img src="img/g5.jpg" alt="Pedicure francés con cristales" style="object-position:center 45%"></div></div>
+      <div class="g wide"><div class="ph"><img src="img/g6.jpg" alt="Pedicure rosa con foil plata" style="object-position:center 55%"></div></div>
+      <div class="g"><div class="ph"><img src="img/g7.jpg" alt="Nude con hoja de oro" style="object-position:center 60%"></div></div>
+      <div class="g"><div class="ph"><img src="img/g8.jpg" alt="Alaciado" style="object-position:center 30%"></div></div>
     </div>
   </div>
 </section>
@@ -326,18 +399,18 @@
       <div style="position:relative;z-index:1">
         <h2>¿Lista para tus <em>nuevas uñas</em>?</h2>
         <p>Los espacios se llenan rápido. Escríbeme y apartamos tu cita.</p>
-        <a href="#" class="btn js-wa" style="background:#fff;color:var(--rose)">Agendar por WhatsApp 💖</a>
+        <a href="#" class="btn js-wa" style="background:#fff;color:var(--rose)">Agendar por WhatsApp</a>
       </div>
       <div class="info">
-        <a class="js-ig" href="#" target="_blank" rel="noopener"><span class="i">📸</span><span><small>Instagram</small><b id="igTxt">@nails.glez21</b></span></a>
-        <div><span class="i">📍</span><span><small>Ubicación</small><b id="ubiTxt"></b></span></div>
-        <div><span class="i">🕐</span><span><small>Horario</small><b id="horTxt"></b></span></div>
+        <a class="js-ig" href="#" target="_blank" rel="noopener"><span class="i"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="#fff"/></svg></span><span><small>Instagram</small><b id="igTxt">@nails.glez21</b></span></a>
+        <div><span class="i"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span><small>Ubicación</small><b id="ubiTxt"></b></span></div>
+        <div><span class="i"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><small>Horario</small><b id="horTxt"></b></span></div>
       </div>
     </div>
   </div>
 </section>
 
-<footer>© <span id="yr"></span> Nails Glez · Hecho con 💅</footer>
+<footer>© <span id="yr"></span> Nails Glez · Uñas &amp; alaciados</footer>
 
 <a class="float js-wa" href="#" aria-label="WhatsApp" target="_blank" rel="noopener">
   <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
@@ -363,7 +436,7 @@
   addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 30));
   const links = document.getElementById("links");
   document.getElementById("menuBtn").onclick = () => links.classList.toggle("open");
-  links.querySelectorAll("a").forEach(a => a.onclick = () => links.classList.remove("open"));
+  links.querySelectorAll("a").forEach(a => a.onclick = () => { links.classList.remove("open"); if (a.getAttribute("href")==="#galeria") setTimeout(()=>document.getElementById("gallery").classList.add("in"),300); });
 
   // aparecer al hacer scroll
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 });
@@ -399,7 +472,7 @@
       });
     };
     wrap(h);
-    requestAnimationFrame(() => setTimeout(() => document.body.classList.add("loaded"), 60));
+    setTimeout(() => document.body.classList.add("loaded"), 80);
   })();
   // Destellos en la portada
   (function(){
@@ -443,8 +516,29 @@
   addEventListener("scroll", () => bar.style.transform = `scaleX(${scrollY / (document.documentElement.scrollHeight - innerHeight)})`, { passive: true });
   // Galería y pasos al aparecer
   const io2 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io2.unobserve(e.target); } }), { threshold: .2 });
-  document.querySelectorAll(".gallery .g").forEach((g, i) => { g.style.transitionDelay = (i * .12) + "s"; io2.observe(g); });
+  const gal = document.getElementById("gallery");
+  document.querySelectorAll(".gallery .g").forEach((g, i) => g.style.transitionDelay = (i * .12) + "s");
+  const showGal = () => gal.classList.add("in");
+  new IntersectionObserver((es, o) => { if (es.some(e => e.isIntersecting)) { showGal(); o.disconnect(); } }, { rootMargin: "0px 0px -10% 0px" }).observe(gal);
+  addEventListener("hashchange", showGal);
+  if (location.hash === "#galeria") showGal();
+  setTimeout(showGal, 4000); // por si el navegador no avisa, se muestran solas
+  // lo mismo para cualquier bloque que aparezca al bajar
+  setTimeout(() => document.querySelectorAll(".rv,.step").forEach(el => el.classList.add("in")), 4500);
   document.querySelectorAll(".step").forEach(el => io2.observe(el));
+
+  // Menú: foto que sigue al cursor + cotizar por WhatsApp
+  (function(){
+    const fl=document.getElementById("mfloat"), fi=fl.querySelector("img");
+    document.querySelectorAll(".js-svc").forEach(r=>{
+      const msg="¡Hola! Quiero cotizar: "+r.dataset.svc+" 💅";
+      r.href = NEGOCIO.whatsapp ? "https://wa.me/"+NEGOCIO.whatsapp+"?text="+encodeURIComponent(msg) : "https://ig.me/m/"+NEGOCIO.instagram;
+      r.target="_blank"; r.rel="noopener";
+      r.addEventListener("mouseenter",()=>{fi.src=r.dataset.img;fl.classList.add("on")});
+      r.addEventListener("mouseleave",()=>fl.classList.remove("on"));
+    });
+    addEventListener("mousemove",e=>{fl.style.left=e.clientX+"px";fl.style.top=e.clientY+"px"},{passive:true});
+  })();
 </script>
 </body>
 </html>
