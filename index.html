@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nails Glez · Uñas que se notan</title>
-<meta name="description" content="Nails Glez: uñas acrílicas, gel, rubber, nail art y pedicure. Agenda tu cita por Instagram o WhatsApp.">
+<meta name="description" content="Nails Glez: uñas acrílicas, gel, rubber, nail art, pedicure y alaciados. Agenda tu cita por Instagram o WhatsApp.">
 <meta property="og:title" content="Nails Glez · Uñas que se notan">
 <meta property="og:description" content="Acrílico, gel, rubber, nail art y pedicure. Agenda tu cita.">
 <meta name="theme-color" content="#e4007c">
@@ -159,6 +159,11 @@
     .gallery .g.wide{grid-column:span 2}
   }
 
+.svc.hair{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;background:linear-gradient(135deg,#fff 0%,#ffe3f2 100%)}
+  .svc.hair .hair-img{border-radius:18px;overflow:hidden;height:300px}
+  .svc.hair .hair-img img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transition:transform .8s}
+  .svc.hair:hover .hair-img img{transform:scale(1.06)}
+  @media (max-width:560px){.svc.hair{grid-template-columns:1fr}.svc.hair .hair-img{height:240px}}
   /* ================= ANIMACIONES ================= */
   /* Título: palabras que suben como si se pintaran */
   h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
@@ -244,15 +249,15 @@
     <div class="rv">
       <span class="tag">✦ Nail Studio</span>
       <h1 id="title">Uñas que <em>se notan<svg viewBox="0 0 300 20" preserveAspectRatio="none"><path d="M4 14 C60 4,120 18,170 9 S260 6,296 12"/></svg></em>, detalles que enamoran.</h1>
-      <p class="lead">Acrílico, gel, rubber y diseños hechos a mano. Llega con una idea y sal con las uñas que soñabas.</p>
+      <p class="lead">Acrílico, gel, rubber, diseños hechos a mano y alaciados. Llega con una idea y sal con las uñas que soñabas.</p>
       <div class="hero-cta">
         <a href="#contacto" class="btn btn-rose js-wa">Agendar cita →</a>
         <a href="#galeria" class="btn btn-ghost">Ver trabajos</a>
       </div>
     </div>
     <div class="hero-art rv">
-      <div class="card c1"><div class="ph" style="--g:linear-gradient(145deg,#f1c6c3,#c8576b 70%,#7a2f42)"><img src="https://unsplash.com/photos/Xa8fX8bQCgs/download?w=1200" alt="Manicura en proceso" loading="lazy" onerror="this.onerror=null;this.src='img/hero-1.svg'"></div></div>
-      <div class="card c2"><div class="ph" style="--g:linear-gradient(160deg,#f7e3d4,#c9a36a)"><img src="https://unsplash.com/photos/dMSyx-_yAOU/download?w=1200" alt="Esmaltes de colores" loading="lazy" onerror="this.onerror=null;this.src='img/hero-2.svg'"></div></div>
+      <div class="card c1"><div class="ph" style="--g:linear-gradient(145deg,#f1c6c3,#c8576b 70%,#7a2f42)"><img src="img/hero-1.jpg" alt="Uñas vino con glitter"></div></div>
+      <div class="card c2"><div class="ph" style="--g:linear-gradient(160deg,#f7e3d4,#c9a36a)"><img src="img/hero-2.jpg" alt="Uñas chrome rosa"></div></div>
       <div class="badge"><span>✨</span>Diseños 100%<br>personalizados</div>
     </div>
   </div>
@@ -260,8 +265,8 @@
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Acrílico</span><b>✦</b><span>Gel</span><b>✦</b><span>Rubber</span><b>✦</b><span>Nail Art</span><b>✦</b><span>Francés</span><b>✦</b><span>Pedicure</span><b>✦</b><span>Chrome</span><b>✦</b>
-    <span>Acrílico</span><b>✦</b><span>Gel</span><b>✦</b><span>Rubber</span><b>✦</b><span>Nail Art</span><b>✦</b><span>Francés</span><b>✦</b><span>Pedicure</span><b>✦</b><span>Chrome</span><b>✦</b>
+    <span>Acrílico</span><b>✦</b><span>Gel</span><b>✦</b><span>Rubber</span><b>✦</b><span>Nail Art</span><b>✦</b><span>Francés</span><b>✦</b><span>Pedicure</span><b>✦</b><span>Chrome</span><b>✦</b><span>Alaciados</span><b>✦</b>
+    <span>Acrílico</span><b>✦</b><span>Gel</span><b>✦</b><span>Rubber</span><b>✦</b><span>Nail Art</span><b>✦</b><span>Francés</span><b>✦</b><span>Pedicure</span><b>✦</b><span>Chrome</span><b>✦</b><span>Alaciados</span><b>✦</b>
   </div>
 </div>
 
@@ -279,6 +284,7 @@
       <article class="svc rv"><div class="ico">💪</div><h3>Rubber / nivelación</h3><p>Refuerza tu uña natural para que crezca fuerte y pareja.</p><div class="price">Pregunta por precio</div></article>
       <article class="svc rv"><div class="ico">🦶</div><h3>Pedicure</h3><p>Limpieza, cuidado y color para que tus pies también luzcan.</p><div class="price">Pregunta por precio</div></article>
       <article class="svc rv"><div class="ico">🔁</div><h3>Retoque y retiro</h3><p>Mantenimiento de tu set o retiro seguro sin maltratar la uña.</p><div class="price">Pregunta por precio</div></article>
+      <article class="svc hair rv"><div class="hair-txt"><div class="ico">💇‍♀️</div><span class="tag" style="margin:0 0 .4rem">✦ También</span><h3>Alaciados</h3><p>Cabello lacio, suave y con brillo espejo. Pregúntame por el tratamiento ideal para tu tipo de cabello.</p><div class="price">Pregunta por precio</div></div><div class="hair-img"><img src="img/g8.jpg" alt="Alaciado" loading="lazy"></div></article>
     </div>
   </div>
 </section>
@@ -289,13 +295,16 @@
       <h2>Trabajos<br><em>recientes</em></h2>
       <p>Mira más diseños todos los días en Instagram.<br><a class="js-ig" href="#" target="_blank" rel="noopener" style="font-weight:700;color:var(--rose)">@nails.glez21 →</a></p>
     </div>
-    <!-- Fotos de banco (Unsplash, licencia libre). Para usar las tuyas: súbelas a img/ y cambia el src (ej. img/1.jpg) -->
+    <!-- Fotos reales de @nails.glez21 en img/g1.jpg ... g8.jpg -->
     <div class="gallery rv" id="gallery">
-      <div class="g tall"><div class="ph"><img src="https://unsplash.com/photos/v-jeflu__6k/download?w=1200" alt="Uñas lilas" loading="lazy" onerror="this.onerror=null;this.src='img/1.svg'"></div></div>
-      <div class="g"><div class="ph"><img src="https://unsplash.com/photos/SbBsIOP8mqg/download?w=1200" alt="Esmalte rojo" loading="lazy" onerror="this.onerror=null;this.src='img/2.svg'"></div></div>
-      <div class="g"><div class="ph"><img src="https://unsplash.com/photos/5OXE3KjDEfI/download?w=1200" alt="Manos y pies con manicura" loading="lazy" onerror="this.onerror=null;this.src='img/3.svg'"></div></div>
-      <div class="g tall"><div class="ph"><img src="https://unsplash.com/photos/3rSc8jGIVHI/download?w=1200" alt="Manicura roja" loading="lazy" onerror="this.onerror=null;this.src='img/4.svg'"></div></div>
-      <div class="g wide"><div class="ph"><img src="https://unsplash.com/photos/WBuwkanEPiM/download?w=1200" alt="Pedicure" loading="lazy" onerror="this.onerror=null;this.src='img/5.svg'"></div></div>
+      <div class="g tall"><div class="ph"><img src="img/g1.jpg" alt="Cat eye café con animal print" style="object-position:center 40%" loading="lazy"></div></div>
+      <div class="g"><div class="ph"><img src="img/g2.jpg" alt="Cat eye azul" style="object-position:center 35%" loading="lazy"></div></div>
+      <div class="g"><div class="ph"><img src="img/g3.jpg" alt="Diseño luna y estrellas" style="object-position:center 45%" loading="lazy"></div></div>
+      <div class="g tall"><div class="ph"><img src="img/g4.jpg" alt="Diseño de mar con perlas" style="object-position:center 45%" loading="lazy"></div></div>
+      <div class="g wide"><div class="ph"><img src="img/g5.jpg" alt="Pedicure francés con cristales" style="object-position:center 45%" loading="lazy"></div></div>
+      <div class="g wide"><div class="ph"><img src="img/g6.jpg" alt="Pedicure rosa con foil plata" style="object-position:center 55%" loading="lazy"></div></div>
+      <div class="g"><div class="ph"><img src="img/g7.jpg" alt="Nude con hoja de oro" style="object-position:center 60%" loading="lazy"></div></div>
+      <div class="g"><div class="ph"><img src="img/g8.jpg" alt="Alaciado" style="object-position:center 30%" loading="lazy"></div></div>
     </div>
   </div>
 </section>
@@ -328,7 +337,7 @@
   </div>
 </section>
 
-<footer>© <span id="yr"></span> Nails Glez · Hecho con 💅 · Fotos: <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></footer>
+<footer>© <span id="yr"></span> Nails Glez · Hecho con 💅</footer>
 
 <a class="float js-wa" href="#" aria-label="WhatsApp" target="_blank" rel="noopener">
   <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
