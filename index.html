@@ -271,13 +271,13 @@
 </head>
 <body class="locked">
 <div class="gate" id="gate">
-  <form class="gate-box" id="gateForm" autocomplete="off">
+  <div class="gate-box" id="gateForm">
     <img class="gate-face" src="img/logo-suave2.png" alt=""><div class="gate-logo">Nails <i>Glez</i></div>
     <p>Para ingresar a tu web,<br>ingresa <b>el nombre del amor de tu vida</b> 💖</p>
-    <input id="gatePass" type="password" placeholder="Escribe el nombre…" aria-label="Nombre del amor de tu vida">
-    <button class="btn btn-rose" type="submit">Entrar</button>
+    <input id="gatePass" type="password" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" placeholder="Escribe el nombre…" aria-label="Nombre del amor de tu vida">
+    <button class="btn btn-rose" type="button" id="gateBtn">Entrar</button>
     <div class="err" id="gateErr"></div>
-  </form>
+  </div>
 </div>
 
 <div class="progress" id="progress"></div>
@@ -579,8 +579,7 @@
           inp = document.getElementById("gatePass"), err = document.getElementById("gateErr");
     const abrir = () => { gate.classList.add("off"); document.body.classList.remove("locked"); window.__reveal(); };
     setTimeout(() => inp.focus(), 300);
-    form.addEventListener("submit", e => {
-      e.preventDefault();
+    const intentar = () => {
       if (norm(inp.value) === norm(CLAVE)) {
         err.textContent = "💖";
         const r = inp.getBoundingClientRect();
@@ -591,7 +590,9 @@
         form.classList.remove("shake"); void form.offsetWidth; form.classList.add("shake");
         inp.select();
       }
-    });
+    };
+    document.getElementById("gateBtn").addEventListener("click", intentar);
+    inp.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); intentar(); } });
   })();
 </script>
 </body>
