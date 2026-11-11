@@ -7,8 +7,8 @@ Es un sitio estático (un solo `index.html`), listo para publicarse gratis en Ve
 ## Cómo editar
 
 - **WhatsApp, ubicación y horario:** en `index.html`, busca `const NEGOCIO` y cambia los valores.
-- **Fotos:** ahora hay ilustraciones de muestra (`img/hero-1.svg`, `img/hero-2.svg` y `img/1.svg` a `img/8.svg`).
-  Para poner tus fotos reales, súbelas a `img/` (ej. `1.jpg`) y en `index.html` cambia `img/1.svg` por `img/1.jpg`.
+- **Fotos:** ahora son fotos de banco de Unsplash (licencia libre), enlazadas en `index.html`. Si alguna no carga, se muestra la ilustración de `img/`.
+  Para poner tus fotos reales, súbelas a `img/` (ej. `1.jpg`) y en `index.html` cambia el `src` de cada `<img>` por `img/1.jpg`.
 - **Precios:** busca `class="price"` en cada servicio.
 - **Colores:** al inicio del `<style>`, en `:root`.
 
