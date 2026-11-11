@@ -182,19 +182,23 @@
     .mrow:hover .mnum,.mrow:hover .mdesc,.mrow:hover .mcta{color:#fff}
     .mrow:hover .mcta{gap:.9rem}
   }
-   .mfloat{position:fixed;left:0;top:0;width:190px;height:240px;border-radius:16px;overflow:hidden;pointer-events:none;z-index:40;opacity:0;transform:translate(40px,-50%) scale(.6) rotate(-6deg);transition:opacity .3s,transform .4s cubic-bezier(.2,.8,.2,1);box-shadow:0 30px 60px -15px rgba(92,0,51,.45)}
-  .mfloat.on{opacity:1;transform:translate(40px,-50%) scale(1) rotate(4deg)}
-  .mfloat img{width:100%;height:100%;object-fit:cover}
-  @media (max-width:760px){
+   @media (max-width:760px){
     .mrow{grid-template-columns:1fr 88px;grid-template-areas:"num thumb" "name thumb" "desc thumb" "cta thumb";gap:.35rem 1rem;padding:1.4rem 0}
     .mnum{grid-area:num}.mname{grid-area:name}.mdesc{grid-area:desc;font-size:.9rem}.mcta{grid-area:cta;margin-top:.4rem}
     .mthumb{display:block;grid-area:thumb;width:88px;height:110px;border-radius:12px;overflow:hidden;align-self:center}
     .mthumb img{width:100%;height:100%;object-fit:cover}
-    .mfloat{display:none}
-  }
+    }
   /* íconos de línea */
   .info .i svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
   .badge .scr{font-family:'Pacifico',cursive;font-size:1.25rem;color:var(--rose);line-height:1}
+
+  /* Varita mágica como cursor (solo computadora) */
+  @media (hover:hover) and (pointer:fine){
+    html,body{cursor:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%3E%20%3Cline%20x1%3D%2211%22%20y1%3D%2211%22%20x2%3D%2236%22%20y2%3D%2236%22%20stroke%3D%22%235c0033%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22/%3E%20%3Cline%20x1%3D%2211%22%20y1%3D%2211%22%20x2%3D%2236%22%20y2%3D%2236%22%20stroke%3D%22%23ff8fc8%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%20stroke-dasharray%3D%223%203%22/%3E%20%3Cpath%20d%3D%22M10%200%20L12.6%207%20L20%207.6%20L14.3%2012.3%20L16.2%2019.6%20L10%2015.5%20L3.8%2019.6%20L5.7%2012.3%20L0%207.6%20L7.4%207%20Z%22%20transform%3D%22translate%281%201%29%20scale%281%29%22%20fill%3D%22%23ff3fa4%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.4%22%20stroke-linejoin%3D%22round%22/%3E%20%3C/svg%3E") 11 11,auto}
+    a,button,.gallery .g,.mrow{cursor:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%3E%20%3Cline%20x1%3D%2211%22%20y1%3D%2211%22%20x2%3D%2236%22%20y2%3D%2236%22%20stroke%3D%22%235c0033%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22/%3E%20%3Cline%20x1%3D%2211%22%20y1%3D%2211%22%20x2%3D%2236%22%20y2%3D%2236%22%20stroke%3D%22%23ff8fc8%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%20stroke-dasharray%3D%223%203%22/%3E%20%3Cpath%20d%3D%22M10%200%20L12.6%207%20L20%207.6%20L14.3%2012.3%20L16.2%2019.6%20L10%2015.5%20L3.8%2019.6%20L5.7%2012.3%20L0%207.6%20L7.4%207%20Z%22%20transform%3D%22translate%281%201%29%20scale%281.08%29%22%20fill%3D%22%23ff3fa4%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.4%22%20stroke-linejoin%3D%22round%22/%3E%20%3Ccircle%20cx%3D%2225%22%20cy%3D%226%22%20r%3D%221.8%22%20fill%3D%22%23ff3fa4%22/%3E%3Ccircle%20cx%3D%226%22%20cy%3D%2226%22%20r%3D%221.5%22%20fill%3D%22%23ff3fa4%22/%3E%3Ccircle%20cx%3D%2222%22%20cy%3D%2214%22%20r%3D%221%22%20fill%3D%22%23ff8fc8%22/%3E%20%3C/svg%3E") 11 11,pointer}
+  }
+  .burst{position:fixed;pointer-events:none;z-index:210;color:#ff3fa4;font-size:14px;text-shadow:0 0 6px #fff;animation:burst .8s ease-out forwards}
+  @keyframes burst{from{opacity:1;transform:translate(-50%,-50%) scale(.4)}to{opacity:0;transform:translate(calc(-50% + var(--bx)),calc(-50% + var(--by))) scale(1.1) rotate(160deg)}}
   /* ================= ANIMACIONES ================= */
   /* Título: palabras que suben como si se pintaran */
   h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
@@ -359,7 +363,6 @@
       </a>
     </div>
   </div>
-  <div class="mfloat" id="mfloat"><img alt=""></div>
 </section>
 
 <section id="galeria" class="gallery-sec">
@@ -527,19 +530,16 @@
   setTimeout(() => document.querySelectorAll(".rv,.step").forEach(el => el.classList.add("in")), 4500);
   document.querySelectorAll(".step").forEach(el => io2.observe(el));
 
-  // Menú: foto que sigue al cursor + cotizar por WhatsApp
+  // Menú: cotizar por WhatsApp + chispazo de la varita
   (function(){
-    const fl=document.getElementById("mfloat"), fi=fl.querySelector("img");
+    const burst=(x,y)=>{ if(reduce) return; for(let i=0;i<10;i++){const b=document.createElement("span");b.className="burst";b.textContent=["✦","✧","♡"][i%3];const a=Math.PI*2*i/10,d=26+Math.random()*24;b.style.left=x+"px";b.style.top=y+"px";b.style.setProperty("--bx",Math.cos(a)*d+"px");b.style.setProperty("--by",Math.sin(a)*d+"px");document.body.append(b);setTimeout(()=>b.remove(),800)} };
     document.querySelectorAll(".js-svc").forEach(r=>{
       const msg="¡Hola! Quiero cotizar: "+r.dataset.svc+" 💅";
       r.href = NEGOCIO.whatsapp ? "https://wa.me/"+NEGOCIO.whatsapp+"?text="+encodeURIComponent(msg) : "https://ig.me/m/"+NEGOCIO.instagram;
       r.target="_blank"; r.rel="noopener";
-      r.addEventListener("mouseenter",()=>{fi.src=r.dataset.img;fl.classList.add("on")});
-      r.addEventListener("mouseleave",()=>fl.classList.remove("on"));
+      r.addEventListener("mouseenter",e=>burst(e.clientX,e.clientY));
+      r.addEventListener("click",e=>burst(e.clientX,e.clientY));
     });
-    let tx=0,ty=0,cx=0,cy=0;
-    addEventListener("mousemove",e=>{tx=e.clientX;ty=e.clientY},{passive:true});
-    (function loop(){cx+=(tx-cx)*.15;cy+=(ty-cy)*.15;fl.style.left=cx+"px";fl.style.top=cy+"px";requestAnimationFrame(loop)})();
   })();
 </script>
 </body>
