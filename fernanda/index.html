@@ -80,6 +80,10 @@
   .hora-et{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:#c2185b}
   .hora-num{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:2rem;line-height:1.1;color:var(--rosa-f)}
   .msg{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:#8a2453;line-height:1.45;margin:14px auto 0;max-width:310px}
+  .cancion{display:inline-flex;flex-direction:column;align-items:center;gap:2px;margin-top:14px;padding:10px 22px;min-height:44px;border-radius:999px;
+    text-decoration:none;font-family:'Quicksand',sans-serif;font-weight:600;font-size:1rem;color:#c2185b;background:#fff;border:1.5px solid #ffb3d4;
+    box-shadow:0 4px 12px rgba(194,24,91,.15)}
+  .cancion small{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:.95rem;color:#e0407f}
   .nota{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:#c2185b;margin-top:12px}
   .btn{margin-top:16px;border:0;cursor:pointer;font-family:'Quicksand',sans-serif;font-weight:600;font-size:1.05rem;color:#fff;
     padding:15px 26px;min-height:48px;border-radius:999px;background:linear-gradient(135deg,#ff8fbf,#e0407f);
@@ -157,6 +161,7 @@
     <div class="primaveras">primaveras</div>
     <div class="hora"><span class="hora-et">La carroza pasará por ti a las</span><span class="hora-num">11:00 a.m.</span></div>
     <p class="msg">Porque de todos los cuentos que existen, el mío empezó el día que te conocí. Eres el amor de mi vida y mereces un día tan mágico como tú.</p>
+    <a class="cancion" id="cancion" href="https://www.youtube.com/results?search_query=Counting+Crows+Accidentally+in+Love" target="_blank" rel="noopener">🎶 Escucha nuestra canción<small>Accidentally in Love</small></a>
     <p class="nota">Esta invitación encantada solo tiene una respuesta.</p>
     <button class="btn" id="acepto">Sí, acepto, ¡claro que acepto! 💖</button>
     <div class="respuesta" id="respuesta">…y vivieron felices para siempre 🌸💕</div>
@@ -224,6 +229,7 @@
     setTimeout(()=>tarjeta.classList.add('ver'),1200);
   });
 
+  document.getElementById('cancion').addEventListener('click',()=>{sonando=false;clearTimeout(t);bm.textContent='🔇'});
   document.getElementById('acepto').addEventListener('click',e=>{
     const b=e.currentTarget,r=b.getBoundingClientRect();
     lluvia(r.left+r.width/2,r.top,170,9);setTimeout(()=>lluvia(W*.15,H*.35,80,7),250);setTimeout(()=>lluvia(W*.85,H*.35,80,7),450);
