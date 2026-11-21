@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Una invitación especial para Fernanda 💖</title>
+<title>Una invitación real para Fernanda 👑</title>
 <meta name="description" content="Te invito a desayunar por tus 26 primaveras 🌸">
 <meta property="og:title" content="Una invitación especial para ti 💖">
 <meta property="og:description" content="Te invito a desayunar por tus 26 primaveras 🌸">
@@ -87,9 +87,17 @@
   .corona{width:92px;margin:0 auto 6px;display:block;
     filter:drop-shadow(0 4px 6px rgba(232,185,106,.6));animation:brillo 3s ease-in-out infinite}
   @keyframes brillo{50%{filter:drop-shadow(0 0 14px rgba(255,215,140,.95))}}
-  .hola{font-family:'Great Vibes',cursive;font-size:2.5rem;color:var(--rosa-4);line-height:1.1}
+  .castillo{width:min(100%,250px);display:block;margin:-6px auto 4px;
+    filter:drop-shadow(0 6px 10px rgba(214,58,122,.25));animation:brillo 3s ease-in-out infinite}
+  @keyframes brillo{50%{filter:drop-shadow(0 0 16px rgba(255,200,225,.95))}}
+  .decreto{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:.95rem;letter-spacing:2px;color:#b8843a;margin-top:6px}
+  .titulo-real{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:#9b2a59;margin-top:2px}
+  .separador{display:flex;align-items:center;gap:10px;justify-content:center;color:#e8b96a;font-size:1.3rem;margin:10px 0 2px}
+  .separador span{height:1px;width:70px;background:linear-gradient(90deg,transparent,#e8b96a,transparent)}
+  .nota{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:#c46a94;margin-top:12px}
+  .hola{font-family:'Great Vibes',cursive;font-size:clamp(2.2rem,9vw,2.8rem);color:var(--rosa-4);line-height:1.1}
   .linea1{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:#8a1745;margin-top:10px;letter-spacing:.5px}
-  .desayuno{font-family:'Great Vibes',cursive;font-size:3.4rem;line-height:1;margin:4px 0 8px;
+  .desayuno{font-family:'Great Vibes',cursive;font-size:clamp(2.8rem,12vw,3.6rem);line-height:1;margin:4px 0 8px;
     background:linear-gradient(90deg,#c2185b,#ff5fa2,#c2185b);-webkit-background-clip:text;background-clip:text;color:transparent;
     background-size:200% auto;animation:shimmer 4s linear infinite}
   @keyframes shimmer{to{background-position:200% center}}
@@ -101,8 +109,7 @@
     filter:drop-shadow(0 3px 2px rgba(194,24,91,.25))}
   .primaveras{font-family:'Great Vibes',cursive;font-size:2.7rem;color:var(--rosa-4)}
   .flores{font-size:1.5rem;letter-spacing:8px;margin:10px 0 4px}
-  .tazita{font-size:2.2rem;margin:6px 0 2px}
-  .msg{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:#9b2a59;line-height:1.45;margin:8px auto 0;max-width:300px}
+    .msg{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:#9b2a59;line-height:1.45;margin:8px auto 0;max-width:300px}
   .btn{
     margin-top:22px;border:0;cursor:pointer;font-family:'Quicksand',sans-serif;font-weight:600;font-size:1.05rem;
     color:#fff;padding:14px 30px;border-radius:999px;
@@ -135,39 +142,49 @@
     <div class="lado"></div>
     <div class="solapa"></div>
     <div class="sello">
-      <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.3 1.1 4 2.3h3.2C14.3 6.1 15.6 5 17.6 5 21 5 23.1 8.4 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>
+      <svg viewBox="0 0 24 24" fill="#fff"><path d="M3 18 L2 7 L7.5 11 L12 4 L16.5 11 L22 7 L21 18 Z"/><rect x="3" y="19" width="18" height="2.4" rx="1"/></svg>
     </div>
   </div>
-  <div class="toca">✨ Toca para abrir ✨</div>
+  <div class="toca">✨ Toca el sello real ✨</div>
 </div>
 
 <div class="tarjeta" id="tarjeta" aria-live="polite">
   <div class="interior" id="interior">
-    <svg class="corona" viewBox="0 0 120 80" aria-hidden="true">
+    <svg class="castillo" viewBox="0 0 240 150" aria-hidden="true">
       <defs>
-        <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#fff1cf"/><stop offset=".5" stop-color="#e8b96a"/><stop offset="1" stop-color="#b8843a"/>
-        </linearGradient>
+        <linearGradient id="cR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe4f0"/><stop offset="1" stop-color="#ffb3d4"/></linearGradient>
+        <linearGradient id="cT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7fb2"/><stop offset="1" stop-color="#d63a7a"/></linearGradient>
+        <linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff1cf"/><stop offset=".5" stop-color="#e8b96a"/><stop offset="1" stop-color="#b8843a"/></linearGradient>
       </defs>
-      <path d="M10 68 L6 22 L34 44 L60 8 L86 44 L114 22 L110 68 Z" fill="url(#g)" stroke="#b8843a" stroke-width="1.5" stroke-linejoin="round"/>
-      <rect x="10" y="64" width="100" height="10" rx="3" fill="url(#g)" stroke="#b8843a" stroke-width="1.5"/>
-      <circle cx="60" cy="8" r="6" fill="#ff5fa2"/><circle cx="6" cy="22" r="5" fill="#ff9ec7"/><circle cx="114" cy="22" r="5" fill="#ff9ec7"/>
-      <circle cx="35" cy="56" r="4.5" fill="#ff5fa2"/><circle cx="60" cy="54" r="6" fill="#f0609e"/><circle cx="85" cy="56" r="4.5" fill="#ff5fa2"/>
+      <g stroke="#e58bb3" stroke-width="1">
+        <rect x="30" y="70" width="34" height="78" fill="url(#cR)"/><polygon points="25,72 47,22 69,72" fill="url(#cT)"/>
+        <rect x="176" y="70" width="34" height="78" fill="url(#cR)"/><polygon points="171,72 193,22 215,72" fill="url(#cT)"/>
+        <rect x="64" y="88" width="112" height="60" fill="url(#cR)"/>
+        <rect x="98" y="52" width="44" height="96" fill="url(#cR)"/><polygon points="92,55 120,2 148,55" fill="url(#cT)"/>
+        <path d="M108 148 v-24 a12 12 0 0 1 24 0 v24z" fill="#d63a7a"/>
+      </g>
+      <g fill="#fff" opacity=".9"><path d="M42 95 a5 5 0 0 1 10 0 v10 h-10z"/><path d="M188 95 a5 5 0 0 1 10 0 v10 h-10z"/><circle cx="120" cy="76" r="7"/></g>
+      <g fill="#ff5fa2"><path d="M47 22 v-12 l12 4 -12 4"/><path d="M193 22 v-12 l12 4 -12 4"/><path d="M120 2 v-1"/></g>
+      <path d="M104 -1 l6 9 10-8 10 8 6-9 -3 14 h-26z" transform="translate(0,-2) scale(1)" fill="url(#g)" opacity="0"/>
+      <g fill="#f5cf86"><circle cx="16" cy="40" r="2"/><circle cx="224" cy="48" r="2.4"/><circle cx="82" cy="30" r="1.6"/><circle cx="160" cy="26" r="1.8"/></g>
     </svg>
 
-    <div class="hola" id="hola">Hola, Fernanda</div>
-    <div class="linea1">Te invito a</div>
-    <div class="desayuno">desayunar</div>
-    <div class="por">por tus</div>
+    <div class="decreto">✦ Por decreto real ✦</div>
+    <div class="hola" id="hola">Su Alteza, Fernanda</div>
+    <div class="titulo-real">Princesa de mi corazón</div>
+    <div class="separador"><span></span>♛<span></span></div>
+    <p class="linea1">Queda cordialmente invitada a un</p>
+    <div class="desayuno">Desayuno Real</div>
+    <div class="por">en honor a sus</div>
     <div class="numero">26</div>
     <div class="primaveras">primaveras</div>
-    <div class="flores">🌸🌷🌸</div>
-    <div class="tazita">☕🥐🍓</div>
-    <p class="msg">Porque eres el amor de mi vida y mereces empezar tu nuevo año como la princesa que eres: consentida, feliz y a mi lado.</p>
+    <div class="flores">🌸 👑 🌸</div>
+    <p class="msg">Hace 26 primaveras el mundo recibió a su princesa más hermosa. Hoy este reino solo tiene un deseo: consentirte, celebrarte y verte sonreír, amor de mi vida.</p>
+    <p class="nota">Esta invitación real solo admite una respuesta.</p>
 
     <button class="btn" id="acepto">Sí, acepto, ¡claro que acepto! 💖</button>
-    <div class="respuesta" id="respuesta">Te amo, princesa 👑</div>
-    <div class="firma">Con todo mi amor</div>
+    <div class="respuesta" id="respuesta">Y vivieron felices para siempre… 👑💕</div>
+    <div class="firma">Con todo el amor de tu príncipe</div>
   </div>
 </div>
 
@@ -257,7 +274,7 @@
     const r=e.currentTarget.getBoundingClientRect();
     confeti(r.left+r.width/2,r.top,160);setTimeout(()=>confeti(W*.2,H*.3,70),250);setTimeout(()=>confeti(W*.8,H*.3,70),450);
     document.getElementById('respuesta').classList.add('ver');
-    e.currentTarget.textContent='¡Sabía que dirías que sí! 💕';
+    e.currentTarget.textContent='¡La princesa ha dicho que sí! 💕';
     if(navigator.vibrate)navigator.vibrate([60,40,60]);
   });
 })();
