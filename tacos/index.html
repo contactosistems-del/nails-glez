@@ -1,0 +1,889 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tacos Esmeralda — Taquizas y guisados para eventos</title>
+<meta name="description" content="Taquizas al pastor y guisados a domicilio en Cuautitlán Izcalli. Cotiza tu evento por WhatsApp.">
+<meta property="og:title" content="Tacos Esmeralda — Taquizas y guisados para eventos">
+<meta property="og:description" content="Taquizas al pastor y guisados a domicilio en Cuautitlán Izcalli. Cotiza tu evento por WhatsApp.">
+<meta property="og:image" content="img/logo.jpg">
+<link rel="icon" href="img/logo.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Kaushan+Script&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;background:#0E0F0C}
+a{color:#7FE0A6}a:hover{color:#B5F0CB}
+*{box-sizing:border-box}
+@keyframes te-spin{from{background-position:0 0,0 0}to{background-position:0 0,208px 0}}
+@keyframes te-spin-pina{from{background-position:0 0}to{background-position:60px 0}}
+@keyframes te-flame{0%,100%{transform:scaleY(1) scaleX(1);opacity:.95}25%{transform:scaleY(1.12) scaleX(.94);opacity:1}50%{transform:scaleY(.9) scaleX(1.05);opacity:.85}75%{transform:scaleY(1.08) scaleX(.97);opacity:1}}
+@keyframes te-glow{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:.8;transform:scale(1.06)}}
+@keyframes te-ember{0%{transform:translate(0,0) scale(1);opacity:0}10%{opacity:1}100%{transform:translate(var(--dx),-340px) scale(.3);opacity:0}}
+@keyframes te-knife{0%,55%,100%{transform:translate(0,0) rotate(-28deg)}70%{transform:translate(-14px,110px) rotate(-20deg)}85%{transform:translate(-4px,40px) rotate(-26deg)}}
+@keyframes te-slice{0%,60%{opacity:0;transform:translate(0,0) rotate(0)}68%{opacity:1}100%{opacity:0;transform:translate(36px,170px) rotate(160deg)}}
+@keyframes te-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes te-rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes te-pulse{0%,100%{box-shadow:0 0 0 0 rgba(31,160,90,.55)}70%{box-shadow:0 0 0 16px rgba(31,160,90,0)}}
+.te-meat{animation:te-spin 3.2s linear infinite}
+.te-pina{animation:te-spin-pina 3.2s linear infinite}
+.te-flame{transform-origin:50% 100%;animation:te-flame 0.9s ease-in-out infinite}
+.te-glow{animation:te-glow 2.4s ease-in-out infinite}
+.te-ember{animation:te-ember 3.6s linear infinite}
+.te-knife{transform-origin:90% 10%;animation:te-knife 2.6s ease-in-out infinite}
+.te-slice{animation:te-slice 2.6s ease-in infinite}
+.te-marquee{animation:te-marquee 28s linear infinite}
+.te-rise{animation:te-rise .8s cubic-bezier(.2,.7,.2,1) both}
+.te-pulse{animation:te-pulse 2.2s ease-out infinite}
+.te-card{transition:transform .25s ease,border-color .25s ease}
+.te-card:hover{transform:translateY(-4px);border-color:#2BB56A}
+@keyframes te-float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+@keyframes te-ring{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes te-pop{0%{opacity:0;transform:scale(.7) rotate(-6deg)}60%{opacity:1;transform:scale(1.06) rotate(2deg)}100%{opacity:1;transform:scale(1) rotate(-2deg)}}
+@keyframes te-wobble{0%,100%{transform:rotate(var(--r))}50%{transform:rotate(calc(var(--r) * -1))}}
+.te-float{animation:te-float 4.5s ease-in-out infinite}
+.te-ring{animation:te-ring 14s linear infinite}
+.te-pop{animation:te-pop .55s cubic-bezier(.2,.8,.2,1) both}
+.te-wobble{animation:te-wobble 3.4s ease-in-out infinite}
+.te-fab{transition:transform .2s ease}
+.te-fab:hover{transform:scale(1.08)}
+@keyframes te-bubble{0%,70%,100%{opacity:1;transform:translateY(0)}80%{transform:translateY(-4px)}}
+.te-bubble{animation:te-bubble 3s ease-in-out infinite}
+.te-faq summary::-webkit-details-marker{display:none}
+@media (max-width: 640px){.te-bubble{display:none}}
+@media (prefers-reduced-motion: reduce){.te-bubble{animation:none!important}}
+@media (prefers-reduced-motion: reduce){.te-float,.te-ring,.te-pop,.te-wobble{animation:none!important}}
+@keyframes te-sprite{from{background-position:0 0}to{background-position:-6240px 0}}
+@keyframes te-coils{0%,100%{opacity:.85}30%{opacity:1}60%{opacity:.75}}
+.te-coils{animation:te-coils 1.3s ease-in-out infinite}
+@keyframes te-drip{0%{transform:translateY(0) scaleY(.6);opacity:0}15%{opacity:1}100%{transform:translateY(34px) scaleY(1.2);opacity:0}}
+.te-drip{animation:te-drip 1.8s ease-in infinite}
+@keyframes te-smoke{0%{transform:translate(0,0) scale(.6);opacity:0}20%{opacity:1}100%{transform:translate(20px,-120px) scale(2.2);opacity:0}}
+.te-smoke{animation:te-smoke 5s ease-out infinite}
+@media (prefers-reduced-motion: reduce){.te-sprite,.te-coils,.te-drip,.te-smoke{animation:none!important}}
+@keyframes te-kb{0%{transform:scale(1.04) translateY(0)}50%{transform:scale(1.12) translateY(-2%)}100%{transform:scale(1.04) translateY(0)}}
+.te-kenburns{animation:te-kb 14s ease-in-out infinite;transform-origin:50% 40%}
+@keyframes te-firefl{0%,100%{opacity:.7}20%{opacity:1}45%{opacity:.55}70%{opacity:.9}}
+.te-fire{animation:te-firefl 1.6s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.te-kenburns,.te-fire{animation:none!important}}
+@media (prefers-reduced-motion: reduce){.te-meat,.te-pina,.te-flame,.te-glow,.te-ember,.te-knife,.te-slice,.te-marquee,.te-rise,.te-pulse{animation:none!important}}
+</style>
+
+</head>
+<body>
+<div id="app"></div>
+<template id="tpl">
+
+<div style="width: 100%; background: #0E0F0C; color: #F4F1EA; font-family: Inter, system-ui, sans-serif; overflow-x: hidden">
+
+  <!-- Barra superior -->
+  <header style="position: sticky; top: 0; z-index: 40; width: 100%; border-bottom: 1px solid #22241C; background: rgba(14,15,12,.88); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px)">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px">
+      <a href="#inicio" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #F4F1EA">
+        <img src="img/logo.jpg" alt="" style="width: 66px; height: 66px; border-radius: 50%; object-fit: cover; display: block; border: 2px solid #2BB56A">
+        <span style="display: flex; flex-direction: column; line-height: 1">
+          <span style="font-family: Anton, Impact, sans-serif; font-size: 24px; letter-spacing: 1px">TACOS ESMERALDA</span>
+          <span style="font-family: 'Kaushan Script', cursive; font-size: 16px; color: #8FD9A8; margin-top: 4px">Taqueros de corazón</span>
+        </span>
+      </a>
+      <nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; font-size: 15px; font-weight: 500">
+        <a href="#taquiza" style="color: #E8E4DA; text-decoration: none; padding: 10px 0">Taquiza</a>
+        <a href="#extras" style="color: #E8E4DA; text-decoration: none; padding: 10px 0">Tortas y gringas</a>
+        <a href="#guisados" style="color: #E8E4DA; text-decoration: none; padding: 10px 0">Guisados</a>
+        <a href="#cotiza" style="color: #E8E4DA; text-decoration: none; padding: 10px 0">Cotiza</a>
+        <a href="#juego" style="color: #F29A2E; text-decoration: none; padding: 10px 0; font-weight: 700">Juega</a>
+        <a href="https://wa.me/525650886350?text=Hola%20Tacos%20Esmeralda%2C%20quiero%20informes%20para%20un%20evento" style="display: inline-flex; align-items: center; gap: 8px; background: #178A4A; color: #FFFFFF; text-decoration: none; padding: 12px 18px; border-radius: 999px; font-weight: 700">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5z"></path></svg>
+          WhatsApp
+        </a>
+        <a href="https://www.facebook.com/search/top?q=Tacos%20Esmeralda" target="_blank" rel="noopener" aria-label="Tacos Esmeralda en Facebook" style="display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 50%; background: #1877F2; color: #FFFFFF"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3H13.5V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"></path></svg></a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero con trompo animado -->
+  <section id="inicio" style="width: 100%; background: #0E0F0C; position: relative">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 48px 24px 56px; display: flex; flex-wrap: wrap; align-items: center; gap: 32px">
+      <div class="te-rise" style="flex: 999 1 500px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px">
+          <div class="te-float" style="position: relative; width: 150px; height: 150px; flex: none">
+            <div class="te-ring" aria-hidden="true" style="position: absolute; inset: -10px; border-radius: 50%; border: 3px dashed #2BB56A"></div>
+            <img src="img/logo.jpg" alt="Logo de Tacos Esmeralda" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; display: block; border: 4px solid #F4F1EA; box-shadow: 0 0 40px rgba(43,181,106,.45)">
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px; min-width: 0">
+            <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; background: #17241B; color: #8FE3B0; border: 1px solid #2F5A3E; padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 600">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+              Cuautitlán Izcalli y alrededores
+            </span>
+            <div aria-live="polite" style="position: relative; align-self: flex-start; background: #F4F1EA; color: #0E0F0C; border-radius: 18px 18px 18px 4px; padding: 10px 18px; min-height: 48px; display: flex; align-items: center">
+              <sc-if value="{{phraseEven}}" hint-placeholder-val="{{ true }}">
+                <span class="te-pop" style="font-family: 'Kaushan Script', cursive; font-size: 24px; line-height: 1.1; white-space: nowrap">{{phraseText}}</span>
+              </sc-if>
+              <sc-if value="{{phraseOdd}}" hint-placeholder-val="{{ false }}">
+                <strong class="te-pop" style="font-family: 'Kaushan Script', cursive; font-weight: 400; font-size: 24px; line-height: 1.1; white-space: nowrap">{{phraseText}}</strong>
+              </sc-if>
+            </div>
+          </div>
+        </div>
+        <h1 style="margin: 0; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: clamp(54px, 8.5vw, 108px); line-height: 0.92; text-transform: uppercase">
+          Taquiza <span style="color: #2BB56A">al pastor</span> <span style="display: block; color: #F29A2E">de trompo</span>
+        </h1>
+        <p style="margin: 0; font-size: 19px; line-height: 1.55; color: #CFCBC0; max-width: 560px">2 horas de taquero sirviendo al momento en tu fiesta, boda o XV años. Rinde de <strong style="color: #F4F1EA">8 a 10 tacos por persona</strong> y <strong style="color: #F4F1EA">la carne que sobre se queda contigo</strong>.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px">
+          <div style="background: #178A4A; border-radius: 16px; padding: 12px 18px; display: flex; align-items: baseline; gap: 10px">
+            <span style="font-family: Anton, Impact, sans-serif; font-size: 46px; line-height: 1">$150</span>
+            <span style="font-size: 14px; font-weight: 600; line-height: 1.3">por persona<br>desde 50 personas</span>
+          </div>
+          <div style="background: #1A1C15; border: 1px solid #33362B; border-radius: 16px; padding: 12px 18px; display: flex; align-items: baseline; gap: 10px">
+            <span style="font-family: Anton, Impact, sans-serif; font-size: 46px; line-height: 1; color: #8FE3B0">$850</span>
+            <span style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #CFCBC0">paquete de<br>guisados desde</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px">
+          <a class="te-pulse" href="#cotiza" style="display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 28px; border-radius: 14px; background: #1FA05A; color: #FFFFFF; font-weight: 800; font-size: 17px; text-decoration: none">Cotiza tu evento</a>
+          <a href="tel:+525650886350" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 56px; padding: 0 22px; border-radius: 14px; border: 1.5px solid #4A4C40; color: #F4F1EA; font-weight: 600; font-size: 17px; text-decoration: none">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg>
+            56 5088 6350
+          </a>
+        </div>
+      </div>
+
+      <!-- Trompo (foto real) -->
+      <div style="flex: 1 1 340px; min-width: 0; display: flex; justify-content: center">
+        <div style="position: relative; width: 360px; max-width: 100%">
+          <div class="te-glow" aria-hidden="true" style="position: absolute; inset: -40px; border-radius: 50%; background: radial-gradient(circle, rgba(242,120,40,.35) 0%, rgba(14,15,12,0) 65%)"></div>
+          <div style="position: relative; width: 100%; aspect-ratio: 293 / 860; max-height: 620px; border-radius: 28px; overflow: hidden; border: 3px solid #2BB56A; box-shadow: 0 24px 60px rgba(0,0,0,.6); background: #1A1C15">
+            <img class="te-kenburns" src="img/trompo.jpg" alt="Trompo de pastor de Tacos Esmeralda, cortando la carne al momento" style="width: 100%; height: 100%; object-fit: cover; display: block">
+            <div class="te-fire" aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(255,110,30,.35) 0%, rgba(255,110,30,0) 45%); mix-blend-mode: screen"></div>
+            <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,15,12,0) 70%, rgba(14,15,12,.75) 100%)"></div>
+            <span class="te-ember" aria-hidden="true" style="position: absolute; left: 22%; bottom: 60px; width: 4px; height: 4px; border-radius: 50%; background: #FFC24B; box-shadow: 0 0 6px #FF9A2E; --dx: -20px"></span>
+            <span class="te-ember" aria-hidden="true" style="position: absolute; left: 60%; bottom: 80px; width: 3px; height: 3px; border-radius: 50%; background: #FFE08A; box-shadow: 0 0 6px #FFC24B; --dx: 16px; animation-delay: -1.4s"></span>
+            <span class="te-ember" aria-hidden="true" style="position: absolute; left: 40%; bottom: 50px; width: 4px; height: 4px; border-radius: 50%; background: #FF8A3D; box-shadow: 0 0 6px #FF9A2E; --dx: 8px; animation-delay: -2.6s"></span>
+            <span style="position: absolute; left: 16px; bottom: 16px; background: #F4F1EA; color: #0E0F0C; padding: 8px 14px; border-radius: 12px; font-family: 'Kaushan Script', cursive; font-size: 20px">Cortado al momento</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cinta en movimiento -->
+  <div style="width: 100%; background: #1FA05A; color: #0E0F0C; overflow: hidden; border-top: 2px solid #0E0F0C; border-bottom: 2px solid #0E0F0C">
+    <div class="te-marquee" aria-hidden="true" style="display: flex; width: max-content; gap: 36px; padding: 14px 0; font-family: Anton, Impact, sans-serif; font-size: 26px; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap">
+      <span>¿Con todo, jefe?</span><span>◆</span><span>Taquiza al pastor</span><span>◆</span><span>¿Le pongo piñita?</span><span>◆</span><span>Tortas y gringas</span><span>◆</span><span>¿Roja o verde? ¡Las dos!</span><span>◆</span><span>La carne que sobra es tuya</span><span>◆</span><span>Pásele, hay de pastor</span><span>◆</span>
+      <span>¿Con todo, jefe?</span><span>◆</span><span>Taquiza al pastor</span><span>◆</span><span>¿Le pongo piñita?</span><span>◆</span><span>Tortas y gringas</span><span>◆</span><span>¿Roja o verde? ¡Las dos!</span><span>◆</span><span>La carne que sobra es tuya</span><span>◆</span><span>Pásele, hay de pastor</span><span>◆</span>
+    </div>
+  </div>
+
+  <!-- Frases taqueras -->
+  <section aria-label="Frases taqueras" style="width: 100%; background: #0E0F0C; position: relative; overflow: hidden">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 80px 24px; display: flex; flex-direction: column; align-items: center; gap: 36px">
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; max-width: 980px">
+        <span class="te-wobble" style="--r: -4deg; background: #1FA05A; color: #FFFFFF; padding: 12px 20px; border-radius: 14px; font-family: Anton, Impact, sans-serif; font-size: 26px; text-transform: uppercase">¿Con todo, jefe?</span>
+        <span class="te-wobble" style="--r: 3deg; animation-delay: -.6s; background: #F29A2E; color: #0E0F0C; padding: 12px 20px; border-radius: 14px; font-family: Anton, Impact, sans-serif; font-size: 26px; text-transform: uppercase">¿Le pongo piñita?</span>
+        <span class="te-wobble" style="--r: -2deg; animation-delay: -1.2s; background: #F4F1EA; color: #0E0F0C; padding: 12px 20px; border-radius: 14px; font-family: Anton, Impact, sans-serif; font-size: 26px; text-transform: uppercase">¿Cuántos van?</span>
+        <span class="te-wobble" style="--r: 4deg; animation-delay: -1.8s; background: #E8572A; color: #0E0F0C; padding: 12px 20px; border-radius: 14px; font-family: Anton, Impact, sans-serif; font-size: 26px; text-transform: uppercase">¡Uno más y ya!</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px">
+        <div class="te-float" style="position: relative; width: 260px; height: 260px; flex: none">
+          <div class="te-ring" aria-hidden="true" style="position: absolute; inset: -16px; border-radius: 50%; border: 3px dashed #F29A2E"></div>
+          <img src="img/logo.jpg" alt="Logo de Tacos Esmeralda" style="width: 260px; height: 260px; border-radius: 50%; object-fit: cover; display: block; border: 5px solid #F4F1EA; box-shadow: 0 0 70px rgba(242,154,46,.35)">
+        </div>
+        <div style="flex: 1 1 380px; min-width: 0; max-width: 560px; display: flex; flex-direction: column; gap: 14px">
+          <p style="margin: 0; font-family: 'Kaushan Script', cursive; font-size: clamp(34px, 4.5vw, 52px); line-height: 1.1; color: #2BB56A">Taqueros de corazón</p>
+          <p style="margin: 0; font-family: Anton, Impact, sans-serif; font-size: clamp(34px, 4.5vw, 54px); line-height: 1.02; text-transform: uppercase">El taco no se pide, <span style="color: #F29A2E">se antoja</span></p>
+          <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #CFCBC0">Con cebollita, cilantro y salsa de la que pica. Así servimos en cada evento.</p>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; max-width: 980px">
+        <span class="te-wobble" style="--r: 3deg; animation-delay: -.3s; background: #F4F1EA; color: #0E0F0C; padding: 12px 20px; border-radius: 14px; font-family: Anton, Impact, sans-serif; font-size: 26px; text-transform: uppercase">¿Roja o verde? ¡Las dos!</span>
+        <span class="te-wobble" style="--r: -3deg; animation-delay: -.9s; background: #1FA05A; color: #FFFFFF; padding: 12px 20px; border-radius: 14px; font-family: Anton, Impact, sans-serif; font-size: 26px; text-transform: uppercase">Pásele, hay de pastor</span>
+        <span class="te-wobble" style="--r: 2deg; animation-delay: -1.5s; background: #E8572A; color: #0E0F0C; padding: 12px 20px; border-radius: 14px; font-family: Anton, Impact, sans-serif; font-size: 26px; text-transform: uppercase">Con cebollita y cilantro</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Juego -->
+  <section id="juego" style="width: 100%; background: #0E0F0C">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 84px 24px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
+      <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; color: #F29A2E; font-weight: 700; font-size: 14px; letter-spacing: 2px; text-transform: uppercase">Minijuego</p>
+        <h2 style="margin: 0; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: clamp(42px, 5.5vw, 66px); line-height: 1; text-transform: uppercase">Ayuda al taquero <span style="color: #2BB56A">a armar sus tacos</span></h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #CFCBC0">Mueve al taquero y atrapa lo que cae en la tortilla. Cuidado con los tacos quemados: te quitan una vida.</p>
+        <ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; font-size: 15px; color: #E8E4DA">
+          <li style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 26px; height: 20px; border-radius: 8px 10px 6px 9px; background: linear-gradient(160deg, #D27A35, #7E3410)"></span>Pastor +1</li>
+          <li style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 22px; height: 22px; border-radius: 6px; background: repeating-linear-gradient(45deg, #F2C14E 0 5px, #C98F22 5px 7px)"></span>Piña +3</li>
+          <li style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 22px; height: 22px; border-radius: 50%; background: radial-gradient(circle, #FFFFFF 30%, #E9E4F2 31% 45%, #FFFFFF 46%); border: 2px solid #D8D0E6"></span>Cebolla +1</li>
+          <li style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 22px; height: 22px; border-radius: 0 100% 0 100%; background: #3BAA5A"></span>Cilantro +1</li>
+          <li style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 26px; height: 20px; border-radius: 8px 10px 6px 9px; background: #1A1410; box-shadow: 0 0 8px #E8572A"></span>Quemado −1 vida</li>
+        </ul>
+        <p style="margin: 0; font-size: 14px; color: #9E9A8F">En compu también puedes usar las flechas ← → después de tocar el juego.</p>
+      </div>
+
+      <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px; align-items: center">
+        <div style="width: 100%; max-width: 520px; display: flex; justify-content: space-between; align-items: center; font-family: Anton, Impact, sans-serif; font-size: 24px; text-transform: uppercase">
+          <span>Tacos: <span style="color: #2BB56A">{{gScore}}</span></span>
+          <span>Vidas: <span style="color: #E8572A">{{gLivesText}}</span></span>
+          <span>Tiempo: <span style="color: #F29A2E">{{gTime}}</span></span>
+        </div>
+        <div tabIndex="0" aria-label="Área del juego. Usa las flechas izquierda y derecha para mover al taquero." onPointerMove="{{gPointer}}" onPointerDown="{{gPointer}}" onKeyDown="{{gKey}}" style="position: relative; width: 100%; max-width: 520px; height: 440px; border-radius: 22px; overflow: hidden; background: linear-gradient(180deg, #1C2A20 0%, #14160F 70%, #2A1D12 100%); border: 2px solid #2F5A3E; touch-action: none; user-select: none; cursor: pointer; outline-color: #2BB56A">
+          <!-- papel picado -->
+          <div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 0; height: 30px; display: flex; justify-content: space-around">
+            <span style="width: 34px; height: 26px; background: #E8572A; clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)"></span>
+            <span style="width: 34px; height: 26px; background: #2BB56A; clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)"></span>
+            <span style="width: 34px; height: 26px; background: #F2C14E; clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)"></span>
+            <span style="width: 34px; height: 26px; background: #F4F1EA; clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)"></span>
+            <span style="width: 34px; height: 26px; background: #E8572A; clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)"></span>
+            <span style="width: 34px; height: 26px; background: #2BB56A; clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)"></span>
+          </div>
+          <!-- cosas que caen -->
+          <sc-for list="{{gItems}}" as="it" hint-placeholder-count="0">
+            <span aria-hidden="true" style="{{it.style}}"></span>
+          </sc-for>
+          <!-- avisos de puntos -->
+          <sc-for list="{{gPops}}" as="pp" hint-placeholder-count="0">
+            <span aria-hidden="true" style="{{pp.style}}">{{pp.text}}</span>
+          </sc-for>
+          <!-- taquero de bloques (diseño original) -->
+          <div aria-hidden="true" style="{{gPlayerStyle}}">
+            <div style="position: relative; width: 84px; height: 118px">
+              <!-- tortilla -->
+              <div style="position: absolute; left: 2px; top: 0; width: 80px; height: 16px; border-radius: 50%; background: radial-gradient(ellipse at 50% 40%, #F7E6B8, #E2C27C 70%, #C9A35A); box-shadow: 0 2px 0 #A9853F"></div>
+              <!-- brazos -->
+              <div style="position: absolute; left: 6px; top: 12px; width: 14px; height: 30px; background: #1F9D55; border-radius: 4px"></div>
+              <div style="position: absolute; right: 6px; top: 12px; width: 14px; height: 30px; background: #1F9D55; border-radius: 4px"></div>
+              <!-- gorra -->
+              <div style="position: absolute; left: 24px; top: 18px; width: 36px; height: 12px; background: #178A4A; border-radius: 6px 6px 0 0"></div>
+              <div style="position: absolute; left: 50px; top: 26px; width: 18px; height: 5px; background: #0F5E33; border-radius: 0 4px 4px 0"></div>
+              <div style="position: absolute; left: 38px; top: 20px; width: 8px; height: 7px; background: #8FE3B0; clip-path: polygon(20% 0, 80% 0, 100% 35%, 50% 100%, 0 35%)"></div>
+              <!-- cabeza -->
+              <div style="position: absolute; left: 26px; top: 30px; width: 32px; height: 28px; background: #C68A5A; border-radius: 6px">
+                <span style="position: absolute; left: 7px; top: 8px; width: 5px; height: 5px; background: #1A1410; border-radius: 1px"></span>
+                <span style="position: absolute; right: 7px; top: 8px; width: 5px; height: 5px; background: #1A1410; border-radius: 1px"></span>
+                <span style="position: absolute; left: 7px; top: 16px; width: 18px; height: 4px; background: #2A1A10; border-radius: 2px"></span>
+                <span style="position: absolute; left: 11px; top: 21px; width: 10px; height: 3px; background: #8A3E22; border-radius: 0 0 4px 4px"></span>
+              </div>
+              <!-- cuerpo -->
+              <div style="position: absolute; left: 20px; top: 58px; width: 44px; height: 38px; background: #1F9D55; border-radius: 6px 6px 2px 2px"></div>
+              <div style="position: absolute; left: 26px; top: 66px; width: 32px; height: 32px; background: #F4F1EA; border-radius: 2px 2px 6px 6px"></div>
+              <span style="position: absolute; left: 34px; top: 72px; width: 16px; height: 4px; background: #E8572A; border-radius: 2px"></span>
+              <!-- piernas -->
+              <div style="position: absolute; left: 24px; top: 96px; width: 16px; height: 20px; background: #2A2C35; border-radius: 0 0 3px 3px"></div>
+              <div style="position: absolute; left: 44px; top: 96px; width: 16px; height: 20px; background: #2A2C35; border-radius: 0 0 3px 3px"></div>
+            </div>
+          </div>
+          <!-- pantallas -->
+          <sc-if value="{{gIdle}}" hint-placeholder-val="{{ true }}">
+            <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; background: rgba(14,15,12,.72); text-align: center; padding: 24px">
+              <span style="font-family: Anton, Impact, sans-serif; font-size: 46px; line-height: 1; text-transform: uppercase">¿Listo, <span style="color: #2BB56A">taquero</span>?</span>
+              <span style="font-size: 16px; color: #CFCBC0">Tienes 45 segundos y 3 vidas</span>
+              <button type="button" onClick="{{gStart}}" style="min-height: 56px; padding: 0 34px; border-radius: 14px; border: none; background: #1FA05A; color: #FFFFFF; font: inherit; font-weight: 800; font-size: 19px; cursor: pointer">Jugar</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{gOver}}" hint-placeholder-val="{{ false }}">
+            <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: rgba(14,15,12,.82); text-align: center; padding: 24px">
+              <span style="font-family: 'Kaushan Script', cursive; font-size: 30px; color: #F29A2E">{{gVerdict}}</span>
+              <span style="font-family: Anton, Impact, sans-serif; font-size: 64px; line-height: 1">{{gScore}} <span style="font-size: 28px; color: #CFCBC0">tacos</span></span>
+              <span style="font-size: 15px; color: #CFCBC0">Mejor marca: {{gBest}}</span>
+              <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center">
+                <button type="button" onClick="{{gStart}}" style="min-height: 52px; padding: 0 26px; border-radius: 14px; border: none; background: #1FA05A; color: #FFFFFF; font: inherit; font-weight: 800; font-size: 17px; cursor: pointer">Otra vez</button>
+                <a href="{{gShare}}" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 22px; border-radius: 14px; background: #F4F1EA; color: #0E0F0C; font-weight: 700; font-size: 16px; text-decoration: none">Presumir por WhatsApp</a>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+        <div style="width: 100%; max-width: 520px; display: flex; gap: 12px">
+          <button type="button" onPointerDown="{{gLeftDown}}" onPointerUp="{{gStop}}" onPointerLeave="{{gStop}}" aria-label="Mover a la izquierda" style="flex: 1; min-height: 56px; border-radius: 14px; border: 1.5px solid #3A3C32; background: #1A1C15; color: #F4F1EA; font-size: 26px; cursor: pointer; touch-action: none">←</button>
+          <button type="button" onPointerDown="{{gRightDown}}" onPointerUp="{{gStop}}" onPointerLeave="{{gStop}}" aria-label="Mover a la derecha" style="flex: 1; min-height: 56px; border-radius: 14px; border: 1.5px solid #3A3C32; background: #1A1C15; color: #F4F1EA; font-size: 26px; cursor: pointer; touch-action: none">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Taquiza: cómo funciona -->
+  <section id="taquiza" style="width: 100%; background: #F4F1EA; color: #0E0F0C">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 84px 24px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-end; justify-content: space-between">
+        <div style="flex: 999 1 460px; min-width: 0">
+          <p style="margin: 0 0 8px; color: #11683A; font-weight: 700; font-size: 14px; letter-spacing: 2px; text-transform: uppercase">Taquiza al pastor · trompo</p>
+          <h2 style="margin: 0; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: clamp(40px, 5.5vw, 66px); line-height: 1; text-transform: uppercase">2 horas de tacos recién cortados</h2>
+        </div>
+        <div style="flex: 1 1 300px; display: flex; align-items: baseline; gap: 12px">
+          <span style="font-family: Anton, Impact, sans-serif; font-size: 84px; line-height: 1; color: #11683A">$150</span>
+          <span style="font-size: 17px; font-weight: 700; text-transform: uppercase; line-height: 1.25">por persona<br><span style="font-weight: 500; text-transform: none; color: #4D4A42">desde 50 personas</span></span>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px">
+        <div class="te-card" style="background: #FFFFFF; border: 1.5px solid #E2DDD0; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+          <span style="font-family: Anton, Impact, sans-serif; font-size: 40px; line-height: 1; color: #E8572A">01</span>
+          <h3 style="margin: 0; font-size: 19px">Llegamos 1 hora antes</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #5C584F">Montamos el trompo y todo el puesto para que esté listo a tiempo.</p>
+        </div>
+        <div class="te-card" style="background: #FFFFFF; border: 1.5px solid #E2DDD0; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+          <span style="font-family: Anton, Impact, sans-serif; font-size: 40px; line-height: 1; color: #E8572A">02</span>
+          <h3 style="margin: 0; font-size: 19px">2 horas sirviendo</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #5C584F">Tacos al momento. Rinde de 8 a 10 por persona; niños y adolescentes comen menos, así alcanza para todos.</p>
+        </div>
+        <div class="te-card" style="background: #FFFFFF; border: 1.5px solid #E2DDD0; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+          <span style="font-family: Anton, Impact, sans-serif; font-size: 40px; line-height: 1; color: #E8572A">03</span>
+          <h3 style="margin: 0; font-size: 19px">1 hora para recoger</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #5C584F">Al terminar desmontamos y dejamos limpio.</p>
+        </div>
+        <div class="te-card" style="background: #0E0F0C; color: #F4F1EA; border: 1.5px solid #0E0F0C; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 10px">
+          <span style="font-family: Anton, Impact, sans-serif; font-size: 40px; line-height: 1; color: #2BB56A">04</span>
+          <h3 style="margin: 0; font-size: 19px">La carne que sobre es tuya</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #CFCBC0">No nos llevamos nada: todo lo que quede se queda con quien contrató.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Extras: tortas y gringas -->
+  <section id="extras" style="width: 100%; background: #0E0F0C">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 84px 24px; display: flex; flex-direction: column; gap: 36px">
+      <div>
+        <p style="margin: 0 0 8px; color: #F29A2E; font-weight: 700; font-size: 14px; letter-spacing: 2px; text-transform: uppercase">Agrégale a tu taquiza</p>
+        <h2 style="margin: 0; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: clamp(40px, 5.5vw, 66px); line-height: 1; text-transform: uppercase">Tortas y gringas <span style="color: #2BB56A">de tu propia carne</span></h2>
+        <p style="margin: 12px 0 0; font-size: 17px; line-height: 1.6; color: #CFCBC0; max-width: 640px">Las preparamos con el mismo pastor del trompo de tu evento. Una para cada invitado, para que todos las prueben.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px">
+        <div class="te-card" style="background: #17190F; border: 1.5px solid #2E3126; border-radius: 24px; padding: 30px; display: flex; flex-direction: column; gap: 14px">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px">
+            <h3 style="margin: 0; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: 40px; text-transform: uppercase; line-height: 1">Tortas al pastor</h3>
+            <svg width="54" height="54" viewBox="0 0 48 48" fill="none" stroke="#F29A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M6 22c0-7 8-12 18-12s18 5 18 12z"></path><path d="M6 27h36"></path><path d="M8 32h32c0 3-3 6-8 6H16c-5 0-8-3-8-6z"></path><path d="M16 15l2 3M24 13v3M32 15l-2 3"></path></svg>
+          </div>
+          <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #CFCBC0">Bolillo con queso y el pastor de tu trompo.</p>
+          <div style="display: flex; align-items: baseline; gap: 10px; margin-top: auto">
+            <span style="font-family: Anton, Impact, sans-serif; font-size: 52px; line-height: 1; color: #F29A2E">+$800</span>
+            <span style="font-size: 15px; color: #B9B5AA">por cada 50 personas</span>
+          </div>
+        </div>
+        <div class="te-card" style="background: #17190F; border: 1.5px solid #2E3126; border-radius: 24px; padding: 30px; display: flex; flex-direction: column; gap: 14px">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px">
+            <h3 style="margin: 0; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: 40px; text-transform: uppercase; line-height: 1">Gringas</h3>
+            <svg width="54" height="54" viewBox="0 0 48 48" fill="none" stroke="#2BB56A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><circle cx="24" cy="24" r="17"></circle><path d="M11 30c4-3 8-3 13 0s9 3 13 0"></path><path d="M14 20h3M22 17h3M30 21h3M19 25h2M27 26h2"></path></svg>
+          </div>
+          <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #CFCBC0">Tortilla de harina con queso, ya preparadas; solo les ponemos tu carne al momento.</p>
+          <div style="display: flex; align-items: baseline; gap: 10px; margin-top: auto">
+            <span style="font-family: Anton, Impact, sans-serif; font-size: 52px; line-height: 1; color: #2BB56A">+$1,000</span>
+            <span style="font-size: 15px; color: #B9B5AA">por cada 50 personas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Franja de tacos -->
+  <div style="width: 100%; height: 220px; background: #1A1C15">
+    <img src="img/tacos.jpg" alt="Hilera de tacos al pastor" style="width: 100%; height: 100%; object-fit: cover; display: block">
+  </div>
+
+  <!-- Guisados -->
+  <section id="guisados" style="width: 100%; background: #14160F">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 84px 24px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px">
+        <div style="flex: 999 1 420px; min-width: 0">
+          <p style="margin: 0 0 8px; color: #8FE3B0; font-weight: 700; font-size: 14px; letter-spacing: 2px; text-transform: uppercase">Sabor casero que se comparte</p>
+          <h2 style="margin: 0; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: clamp(44px, 6vw, 72px); line-height: 1; text-transform: uppercase">Guisados <span style="font-family: 'Kaushan Script', cursive; text-transform: none; color: #2BB56A; font-size: 0.75em">para tu evento</span></h2>
+        </div>
+        <div style="flex: 1 1 260px; display: flex; gap: 14px; justify-content: flex-end">
+          <img src="img/guisado-rojo.jpg" alt="Cazuela de mole rojo con pollo" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid #2F5A3E">
+          <img src="img/guisado-verde.jpg" alt="Cazuela de guisado en salsa verde" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid #2F5A3E">
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: stretch">
+        <div style="flex: 999 1 480px; min-width: 0; background: #1A1C15; border: 1px solid #2E3126; border-radius: 22px; padding: 28px">
+          <h3 style="margin: 0 0 18px; font-size: 15px; letter-spacing: 1.5px; text-transform: uppercase; color: #8FE3B0">Guisados disponibles</h3>
+          <ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 24px; font-size: 16px; color: #E8E4DA">
+            <sc-for list="{{guisados}}" as="g" hint-placeholder-count="10">
+              <li style="display: flex; gap: 10px; align-items: flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="#1F9D55" stroke="#8FE3B0" stroke-width="1.2" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M6 4h12l4 5-10 12L2 9z"></path></svg>{{g.name}}</li>
+            </sc-for>
+          </ul>
+        </div>
+        <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+          <div style="background: #178A4A; border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 12px">
+            <span style="font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px">Paquete desde</span>
+            <span style="font-family: Anton, Impact, sans-serif; font-size: 68px; line-height: 1">$850</span>
+            <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 15px; font-weight: 500">
+              <li>✓ Mínimo 3 guisados</li>
+              <li>✓ Pedido con 1 semana de anticipación</li>
+              <li>✓ 50% de anticipo para apartar fecha</li>
+            </ul>
+          </div>
+          <div style="background: #1A1C15; border: 1px solid #2E3126; border-radius: 22px; padding: 24px">
+            <h3 style="margin: 0 0 12px; font-size: 15px; letter-spacing: 1.5px; text-transform: uppercase; color: #8FE3B0">Incluye</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #E8E4DA">Arroz y frijoles · Tortillas · Salsas · Limones (cuando aplique) · Sal · Piedras caloríficas para mantener los guisados calientes</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+        <div style="border: 1px solid #2E3126; border-radius: 18px; padding: 22px; display: flex; gap: 14px; align-items: center">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2BB56A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M3 7h11v9H3z"></path><path d="M14 10h4l3 3v3h-7"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg>
+          <span style="font-size: 15px; line-height: 1.4">Servicio a domicilio en Cuautitlán y alrededores</span>
+        </div>
+        <div style="border: 1px solid #2E3126; border-radius: 18px; padding: 22px; display: flex; gap: 14px; align-items: center">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2BB56A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><circle cx="9" cy="8" r="3"></circle><circle cx="17" cy="9" r="2.5"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path><path d="M15 14.5c3 0 6 2 6 5.5"></path></svg>
+          <span style="font-size: 15px; line-height: 1.4">El servicio es para que tus invitados se sirvan</span>
+        </div>
+        <div style="border: 1px solid #2E3126; border-radius: 18px; padding: 22px; display: flex; gap: 14px; align-items: center">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2BB56A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><circle cx="12" cy="7" r="3"></circle><path d="M5 21v-2a7 7 0 0 1 14 0v2"></path><path d="M9 14l3 3 3-3"></path></svg>
+          <span style="font-size: 15px; line-height: 1.4">Persona para servir: <strong>$280 extra</strong> (2.5 horas)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cotizador -->
+  <section id="cotiza" style="width: 100%; background: #F4F1EA; color: #0E0F0C">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 84px 24px; display: flex; flex-direction: column; gap: 32px">
+      <div>
+        <p style="margin: 0 0 8px; color: #B23C14; font-weight: 700; font-size: 14px; letter-spacing: 2px; text-transform: uppercase">Reserva tu fecha</p>
+        <h2 style="margin: 0; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: clamp(40px, 5.5vw, 66px); line-height: 1; text-transform: uppercase">Cotiza tu evento</h2>
+        <p style="margin: 10px 0 0; font-size: 16px; line-height: 1.5; color: #4D4A42; max-width: 600px">Llena los datos y te armamos el mensaje para WhatsApp. Te confirmamos disponibilidad y total.</p>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+        <div style="flex: 999 1 520px; min-width: 0; background: #FFFFFF; border: 1px solid #E2DDD0; border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 24px">
+
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <span style="font-size: 15px; font-weight: 700">¿Qué servicio quieres?</span>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px">
+              <button type="button" onClick="{{pickTaquiza}}" aria-pressed="{{isTaquiza}}" style="{{taquizaStyle}}">Taquiza al pastor</button>
+              <button type="button" onClick="{{pickGuisados}}" aria-pressed="{{isGuisados}}" style="{{guisadosStyle}}">Guisados</button>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 20px">
+            <div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 10px">
+              <span id="lbl-personas" style="font-size: 15px; font-weight: 700">Número de personas</span>
+              <div role="group" aria-labelledby="lbl-personas" style="display: flex; align-items: center; gap: 12px">
+                <button type="button" onClick="{{lessPeople}}" aria-label="Quitar 5 personas" style="width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid #CFC9BA; background: #FFFFFF; color: #0E0F0C; font-size: 22px; font-weight: 600; cursor: pointer">−</button>
+                <span aria-live="polite" style="min-width: 56px; text-align: center; font-family: Anton, Impact, sans-serif; font-size: 34px">{{people}}</span>
+                <button type="button" onClick="{{morePeople}}" aria-label="Agregar 5 personas" style="width: 48px; height: 48px; border-radius: 50%; border: none; background: #178A4A; color: #FFFFFF; font-size: 22px; font-weight: 600; cursor: pointer">+</button>
+              </div>
+            </div>
+            <div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 10px">
+              <label for="fecha" style="font-size: 15px; font-weight: 700">Fecha del evento</label>
+              <input id="fecha" type="date" onInput="{{onDate}}" style="height: 48px; border-radius: 12px; border: 1.5px solid #CFC9BA; padding: 0 12px; font: inherit; font-size: 16px; color: #0E0F0C; background: #FFFFFF">
+            </div>
+          </div>
+
+          <sc-if value="{{isTaquiza}}" hint-placeholder-val="{{ true }}">
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <span style="font-size: 15px; font-weight: 700">Extras (una para cada invitado)</span>
+              <div style="display: flex; flex-wrap: wrap; gap: 10px">
+                <button type="button" onClick="{{toggleTortas}}" aria-pressed="{{tortas}}" style="{{tortasStyle}}">Tortas al pastor · +$800 c/50</button>
+                <button type="button" onClick="{{toggleGringas}}" aria-pressed="{{gringas}}" style="{{gringasStyle}}">Gringas · +$1,000 c/50</button>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{isGuisados}}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; flex-direction: column; gap: 18px">
+              <div style="display: flex; flex-direction: column; gap: 10px">
+                <span style="font-size: 15px; font-weight: 700">Elige tus guisados (mínimo 3) · <span style="color: #11683A">{{pickedCount}} elegidos</span></span>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                  <sc-for list="{{guisados}}" as="g" hint-placeholder-count="10">
+                    <button type="button" onClick="{{g.toggle}}" aria-pressed="{{g.on}}" style="{{g.style}}">{{g.name}}</button>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 10px">
+                <span style="font-size: 15px; font-weight: 700">Persona para servir</span>
+                <button type="button" onClick="{{toggleServer}}" aria-pressed="{{server}}" style="{{serverStyle}}">{{serverLabel}}</button>
+              </div>
+            </div>
+          </sc-if>
+
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <label for="lugar" style="font-size: 15px; font-weight: 700">Colonia o municipio</label>
+            <input id="lugar" type="text" onInput="{{onPlace}}" placeholder="Ej. Cumbria, Cuautitlán Izcalli" style="height: 48px; border-radius: 12px; border: 1.5px solid #CFC9BA; padding: 0 12px; font: inherit; font-size: 16px; color: #0E0F0C; background: #FFFFFF">
+          </div>
+        </div>
+
+        <aside style="flex: 1 1 300px; min-width: 0; background: #0E0F0C; color: #F4F1EA; border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+          <h3 style="margin: 0; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: 30px; text-transform: uppercase">Tu cotización</h3>
+          <sc-for list="{{lines}}" as="l" hint-placeholder-count="3">
+            <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; border-bottom: 1px dashed #34362C; padding-bottom: 10px"><span style="color: #B9B5AA">{{l.label}}</span><strong>{{l.value}}</strong></div>
+          </sc-for>
+          <div style="display: flex; flex-direction: column; gap: 4px; margin-top: 4px">
+            <span style="color: #B9B5AA; font-size: 14px">{{estimateLabel}}</span>
+            <span style="font-family: Anton, Impact, sans-serif; font-size: 54px; line-height: 1; color: #2BB56A">{{estimate}}</span>
+          </div>
+          <sc-if value="{{hasWarning}}" hint-placeholder-val="{{ false }}">
+            <p style="margin: 0; background: #3A2416; color: #FFC9A8; border-radius: 10px; padding: 10px 12px; font-size: 14px; line-height: 1.45">{{warning}}</p>
+          </sc-if>
+          <a class="te-pulse" href="{{waLink}}" style="display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; border-radius: 14px; background: #1FA05A; color: #FFFFFF; font-weight: 800; font-size: 17px; text-decoration: none">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5z"></path></svg>
+            Enviar por WhatsApp
+          </a>
+          <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #9E9A8F">Precio estimado. El total final te lo confirmamos por WhatsApp.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Números -->
+  <section aria-label="Datos" style="width: 100%; background: #F4F1EA; color: #0E0F0C; border-top: 1px solid #E2DDD0">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 44px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; text-align: center">
+      <div><div style="font-family: Anton, Impact, sans-serif; font-size: 58px; line-height: 1; color: #11683A">2.7 mil</div><div style="margin-top: 6px; font-size: 15px; color: #4D4A42; font-weight: 600">seguidores en Facebook</div></div>
+      <div><div style="font-family: Anton, Impact, sans-serif; font-size: 58px; line-height: 1; color: #B23C14">8–10</div><div style="margin-top: 6px; font-size: 15px; color: #4D4A42; font-weight: 600">tacos por persona aprox.</div></div>
+      <div><div style="font-family: Anton, Impact, sans-serif; font-size: 58px; line-height: 1; color: #11683A">2 h</div><div style="margin-top: 6px; font-size: 15px; color: #4D4A42; font-weight: 600">de taquero sirviendo</div></div>
+      <div><div style="font-family: Anton, Impact, sans-serif; font-size: 58px; line-height: 1; color: #B23C14">10</div><div style="margin-top: 6px; font-size: 15px; color: #4D4A42; font-weight: 600">guisados para elegir</div></div>
+    </div>
+  </section>
+
+  <!-- Preguntas frecuentes -->
+  <section id="faq" style="width: 100%; background: #14160F">
+    <div style="max-width: 900px; margin: 0 auto; padding: 84px 24px; display: flex; flex-direction: column; gap: 28px">
+      <div style="text-align: center">
+        <p style="margin: 0 0 8px; color: #8FE3B0; font-weight: 700; font-size: 14px; letter-spacing: 2px; text-transform: uppercase">Preguntas frecuentes</p>
+        <h2 style="margin: 0; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: clamp(40px, 5.5vw, 62px); line-height: 1; text-transform: uppercase">¿Tienes dudas, jefe?</h2>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <sc-for list="{{faqs}}" as="f" hint-placeholder-count="6">
+          <div style="background: #1A1C15; border: 1px solid #2E3126; border-radius: 16px; overflow: hidden">
+            <button type="button" onClick="{{f.toggle}}" aria-expanded="{{f.open}}" style="width: 100%; min-height: 60px; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 22px; background: transparent; border: none; color: #F4F1EA; font: inherit; font-size: 17px; font-weight: 700; text-align: left; cursor: pointer">
+              <span>{{f.q}}</span>
+              <span aria-hidden="true" style="flex: none; width: 32px; height: 32px; border-radius: 50%; background: #178A4A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 20px; line-height: 1">{{f.sign}}</span>
+            </button>
+            <sc-if value="{{f.open}}" hint-placeholder-val="{{ false }}">
+              <p style="margin: 0; padding: 0 22px 20px; font-size: 16px; line-height: 1.6; color: #CFCBC0">{{f.a}}</p>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section style="width: 100%; background: #178A4A; color: #FFFFFF">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 52px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px">
+      <div>
+        <h2 style="margin: 0; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: clamp(34px, 4.5vw, 54px); line-height: 1; text-transform: uppercase">Reserva tu fecha</h2>
+        <p style="margin: 6px 0 0; font-family: 'Kaushan Script', cursive; font-size: 24px">Taqueros de corazón</p>
+      </div>
+      <a href="https://wa.me/525650886350?text=Hola%20Tacos%20Esmeralda%2C%20quiero%20reservar%20una%20fecha" style="display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 28px; border-radius: 14px; background: #0E0F0C; color: #FFFFFF; font-weight: 700; font-size: 18px; text-decoration: none">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5z"></path></svg>
+        56 5088 6350
+      </a>
+    </div>
+  </section>
+
+  <footer style="width: 100%; background: #080906; color: #9E9A8F">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px">
+      <span>© 2026 Tacos Esmeralda · Taqueros de corazón · <a href="https://www.facebook.com/search/top?q=Tacos%20Esmeralda" target="_blank" rel="noopener" style="color: #8FB8F5">Facebook</a> · <a href="https://wa.me/525650886350" style="color: #7FE0A6">WhatsApp</a></span>
+      <span>Taquizas, tortas, gringas y guisados · Cuautitlán Izcalli y alrededores</span>
+    </div>
+  </footer>
+
+  <!-- Botones flotantes -->
+  <div style="position: fixed; right: 18px; bottom: 18px; z-index: 50; display: flex; flex-direction: column; align-items: flex-end; gap: 12px">
+    <a class="te-fab" href="https://www.facebook.com/search/top?q=Tacos%20Esmeralda" target="_blank" rel="noopener" aria-label="Ver Tacos Esmeralda en Facebook" style="display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 50%; background: #1877F2; color: #FFFFFF; box-shadow: 0 8px 22px rgba(0,0,0,.45)"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3H13.5V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"></path></svg></a>
+    <a class="te-fab" href="tel:+525650886350" aria-label="Llamar al 56 5088 6350" style="display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 50%; background: #F29A2E; color: #0E0F0C; box-shadow: 0 8px 22px rgba(0,0,0,.45)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg></a>
+    <div style="display: flex; align-items: center; gap: 12px">
+      <span class="te-bubble" style="background: #FFFFFF; color: #0E0F0C; padding: 10px 14px; border-radius: 14px 14px 4px 14px; font-size: 14px; font-weight: 700; box-shadow: 0 8px 22px rgba(0,0,0,.35); white-space: nowrap">¿Cotizamos tu evento?</span>
+      <a class="te-fab te-pulse" href="https://wa.me/525650886350?text=Hola%20Tacos%20Esmeralda%2C%20quiero%20cotizar%20un%20evento" aria-label="Escribir por WhatsApp" style="display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 50%; background: #25D366; color: #FFFFFF; box-shadow: 0 10px 26px rgba(0,0,0,.5)"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5z"></path><path d="M9 9.5c.3 1.8 1.7 3.3 3.5 4l1-1 2 1"></path></svg></a>
+    </div>
+  </div>
+  <a class="te-fab" href="#inicio" aria-label="Volver arriba" style="position: fixed; left: 18px; bottom: 18px; z-index: 50; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: #1A1C15; border: 1px solid #3A3C32; color: #F4F1EA; box-shadow: 0 8px 22px rgba(0,0,0,.45)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></a>
+</div>
+</template>
+<script>
+/* Mini motor de plantillas para la página de Tacos Esmeralda */
+(function () {
+  var HOLE = /\{\{\s*([^}]+?)\s*\}\}/g;
+  function lookup(scope, path) {
+    if (path === 'true') return true;
+    if (path === 'false') return false;
+    var parts = path.split('.'), v = scope;
+    for (var i = 0; i < parts.length; i++) { if (v == null) return undefined; v = v[parts[i]]; }
+    return v;
+  }
+  function single(str) { var m = /^\s*\{\{\s*([^}]+?)\s*\}\}\s*$/.exec(str); return m ? m[1] : null; }
+  function fill(str, scope) {
+    return str.replace(HOLE, function (_, p) { var v = lookup(scope, p); return v == null ? '' : String(v); });
+  }
+  function bind(el) {
+    if (!el.__h) return;
+    el.__l = el.__l || {};
+    Object.keys(el.__h).forEach(function (t) {
+      if (el.__l[t]) return;
+      el.__l[t] = true;
+      el.addEventListener(t, function (e) { var f = el.__h && el.__h[t]; if (typeof f === 'function') f(e); });
+    });
+  }
+  function render(node, scope, out) {
+    if (node.nodeType === 3) { out.push(document.createTextNode(fill(node.data, scope))); return; }
+    if (node.nodeType !== 1) return;
+    var tag = node.localName;
+    if (tag === 'sc-for') {
+      var list = lookup(scope, single(node.getAttribute('list')) || '') || [];
+      var as = node.getAttribute('as');
+      for (var i = 0; i < list.length; i++) {
+        var s = Object.create(scope); s[as] = list[i];
+        kids(node, s, out);
+      }
+      return;
+    }
+    if (tag === 'sc-if') {
+      var raw = node.getAttribute('value') || '';
+      var p = single(raw);
+      if (p ? lookup(scope, p) : raw) kids(node, scope, out);
+      return;
+    }
+    var el = node.namespaceURI && node.namespaceURI !== 'http://www.w3.org/1999/xhtml'
+      ? document.createElementNS(node.namespaceURI, node.localName)
+      : document.createElement(node.localName);
+    for (var a = 0; a < node.attributes.length; a++) {
+      var at = node.attributes[a], name = at.name, val = at.value;
+      if (name.indexOf('hint-') === 0) continue;
+      if (name.length > 2 && name.slice(0, 2) === 'on') {
+        var hp = single(val);
+        if (hp) { el.__h = el.__h || {}; el.__h[name.slice(2).toLowerCase()] = lookup(scope, hp); }
+        continue;
+      }
+      var v = val.indexOf('{{') >= 0 ? fill(val, scope) : val;
+      if (at.namespaceURI) el.setAttributeNS(at.namespaceURI, name, v); else el.setAttribute(name, v);
+    }
+    bind(el);
+    var src = node.localName === 'template' ? node.content : node;
+    var ch = []; kids(src, scope, ch);
+    for (var c = 0; c < ch.length; c++) el.appendChild(ch[c]);
+    out.push(el);
+  }
+  function kids(node, scope, out) { for (var n = node.firstChild; n; n = n.nextSibling) render(n, scope, out); }
+
+  function morph(parent, next) {
+    var old = Array.prototype.slice.call(parent.childNodes);
+    for (var i = 0; i < next.length; i++) {
+      var o = old[i], n = next[i];
+      if (!o) { parent.appendChild(n); continue; }
+      if (o.nodeType !== n.nodeType || o.nodeName !== n.nodeName || o.namespaceURI !== n.namespaceURI) { parent.replaceChild(n, o); continue; }
+      if (o.nodeType === 3) { if (o.data !== n.data) o.data = n.data; continue; }
+      for (var a = o.attributes.length - 1; a >= 0; a--) { var an = o.attributes[a]; if (!n.hasAttribute(an.name)) o.removeAttribute(an.name); }
+      for (var b = 0; b < n.attributes.length; b++) {
+        var at = n.attributes[b];
+        if (o.getAttribute(at.name) !== at.value) {
+          if (at.namespaceURI) o.setAttributeNS(at.namespaceURI, at.name, at.value); else o.setAttribute(at.name, at.value);
+        }
+      }
+      o.__h = n.__h; bind(o);
+      morph(o, Array.prototype.slice.call(n.childNodes));
+    }
+    for (var j = old.length - 1; j >= next.length; j--) parent.removeChild(old[j]);
+  }
+
+  function DCLogic(props) { this.props = props || {}; this.state = {}; }
+  DCLogic.prototype.setState = function (p) {
+    Object.assign(this.state, typeof p === 'function' ? p(this.state) : p);
+    if (this.__schedule) this.__schedule();
+  };
+  window.DCLogic = DCLogic;
+
+  window.DCMount = function (Comp, tpl, root) {
+    var c = new Comp({});
+    var pending = false;
+    function draw() {
+      pending = false;
+      var vals = c.renderVals();
+      var out = []; kids(tpl.content, vals, out);
+      morph(root, out);
+    }
+    c.__schedule = function () {
+      if (pending) return; pending = true;
+      (window.requestAnimationFrame || setTimeout)(draw);
+    };
+    draw();
+    if (c.componentDidMount) c.componentDidMount();
+  };
+})();
+
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { service: 'taquiza', people: 50, date: '', place: '', server: false, tortas: false, gringas: false, picked: {}, phrase: 0, faq: 0, g: { mode: 'idle', x: 50, items: [], pops: [], score: 0, lives: 3, t: 45, best: 0 } };
+  }
+  componentDidMount() {
+    var self = this;
+    this.timer = setInterval(function () { self.setState({ phrase: (self.state.phrase + 1) % 6 }); }, 2600);
+    try { var b = parseInt(localStorage.getItem('te-best') || '0', 10) || 0; if (b) this.setState({ g: Object.assign({}, this.state.g, { best: b }) }); } catch (e) {}
+  }
+  componentWillUnmount() { clearInterval(this.timer); clearInterval(this.gLoop); }
+  gStartGame() {
+    var self = this;
+    clearInterval(this.gLoop);
+    this.gDir = 0; this.gLast = Date.now(); this.gSpawn = 0; this.gId = 0;
+    this.setState({ g: Object.assign({}, this.state.g, { mode: 'play', x: 50, items: [], pops: [], score: 0, lives: 3, t: 45 }) });
+    this.gLoop = setInterval(function () { self.gTick(); }, 40);
+  }
+  gTick() {
+    var g = this.state.g; if (g.mode !== 'play') { clearInterval(this.gLoop); return; }
+    var now = Date.now(); var dt = Math.min(0.08, (now - this.gLast) / 1000); this.gLast = now;
+    var t = Math.max(0, g.t - dt);
+    var x = Math.max(8, Math.min(92, g.x + (this.gDir || 0) * 75 * dt));
+    var level = 1 + (45 - t) / 25;
+    var kinds = [['pastor', 1], ['pastor', 1], ['pastor', 1], ['pina', 3], ['cebolla', 1], ['cilantro', 1], ['quemado', 0], ['quemado', 0]];
+    var items = []; var pops = []; var score = g.score; var lives = g.lives;
+    this.gSpawn -= dt;
+    if (this.gSpawn <= 0) {
+      var k = kinds[Math.floor(Math.random() * kinds.length)];
+      items.push({ id: ++this.gId, kind: k[0], pts: k[1], x: 6 + Math.random() * 88, y: 20, v: (110 + Math.random() * 60) * level });
+      this.gSpawn = Math.max(0.32, 0.85 - (level - 1) * 0.35);
+    }
+    for (var i = 0; i < g.items.length; i++) {
+      var it = Object.assign({}, g.items[i]); it.y += it.v * dt;
+      if (it.y > 300 && it.y < 340 && Math.abs(it.x - x) < 11) {
+        if (it.kind === 'quemado') { lives -= 1; pops.push({ id: it.id, x: it.x, y: 300, text: '¡Ay! −1 vida', bad: true, life: 0.8 }); }
+        else { score += it.pts; pops.push({ id: it.id, x: it.x, y: 300, text: '+' + it.pts, bad: false, life: 0.8 }); }
+        continue;
+      }
+      if (it.y < 450) items.push(it);
+    }
+    for (var j = 0; j < g.pops.length; j++) { var p = Object.assign({}, g.pops[j]); p.life -= dt; p.y -= 40 * dt; if (p.life > 0) pops.push(p); }
+    var mode = (t <= 0 || lives <= 0) ? 'over' : 'play';
+    var best = Math.max(g.best, score);
+    if (mode === 'over') { clearInterval(this.gLoop); try { localStorage.setItem('te-best', String(best)); } catch (e) {} }
+    this.setState({ g: { mode: mode, x: x, items: items, pops: pops, score: score, lives: Math.max(0, lives), t: t, best: best } });
+  }
+  gSetX(clientX, el) {
+    var r = el.getBoundingClientRect();
+    var x = Math.max(8, Math.min(92, (clientX - r.left) / r.width * 100));
+    this.setState({ g: Object.assign({}, this.state.g, { x: x }) });
+  }
+  renderVals() {
+    var self = this;
+    var s = this.state;
+    var names = ['Mole rojo con pollo', 'Papas con longaniza', 'Entomatado de puerco', 'Carne al pastor', 'Picadillo con verduras', 'Alambre de res o puerco', 'Cochinita', 'Suadero con nopales en morita', 'Tortitas de pollo en salsa verde', 'Chicharrón en salsa verde o roja'];
+    var chip = function (on) {
+      return 'min-height: 44px; padding: 0 16px; border-radius: 999px; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; ' +
+        (on ? 'background: #178A4A; color: #FFFFFF; border: 1.5px solid #178A4A;' : 'background: #FFFFFF; color: #0E0F0C; border: 1.5px solid #CFC9BA;');
+    };
+    var toggle = function (k) { return function () { var o = {}; o[k] = !self.state[k]; self.setState(o); }; };
+    var guisados = names.map(function (n) {
+      var on = !!s.picked[n];
+      return { name: n, on: on, style: chip(on), toggle: function () { var p = Object.assign({}, self.state.picked); p[n] = !p[n]; self.setState({ picked: p }); } };
+    });
+    var chosen = guisados.filter(function (g) { return g.on; }).map(function (g) { return g.name; });
+    var isT = s.service === 'taquiza';
+    var money = function (n) { return '$' + Math.round(n).toLocaleString('es-MX'); };
+    var lines = [{ label: 'Servicio', value: isT ? 'Taquiza al pastor' : 'Guisados' }, { label: 'Personas', value: String(s.people) }];
+    var warning = '';
+    var estimate, estimateLabel;
+    if (isT) {
+      var base = s.people * 150;
+      var t = s.tortas ? s.people * 16 : 0;
+      var g = s.gringas ? s.people * 20 : 0;
+      lines.push({ label: 'Taquiza (2 h)', value: money(base) });
+      if (s.tortas) lines.push({ label: 'Tortas al pastor', value: money(t) });
+      if (s.gringas) lines.push({ label: 'Gringas', value: money(g) });
+      estimateLabel = 'Total estimado';
+      estimate = money(base + t + g);
+      if (s.people < 50) warning = 'La taquiza es para eventos desde 50 personas.';
+    } else {
+      lines.push({ label: 'Guisados elegidos', value: String(chosen.length) });
+      lines.push({ label: 'Persona para servir', value: s.server ? '+$280' : 'No' });
+      estimateLabel = 'Paquete de guisados';
+      estimate = 'desde $850';
+      if (chosen.length < 3) warning = 'Elige mínimo 3 guisados. Pedido con 1 semana de anticipación y 50% de anticipo.';
+    }
+    var msg = ['Hola Tacos Esmeralda, quiero cotizar un evento:'];
+    msg.push('Servicio: ' + (isT ? 'Taquiza al pastor (2 horas)' : 'Guisados'));
+    msg.push('Personas: ' + s.people);
+    if (s.date) msg.push('Fecha: ' + s.date);
+    if (s.place) msg.push('Lugar: ' + s.place);
+    if (isT && s.tortas) msg.push('Extra: Tortas al pastor');
+    if (isT && s.gringas) msg.push('Extra: Gringas');
+    if (!isT && chosen.length) msg.push('Guisados: ' + chosen.join(', '));
+    if (!isT) msg.push('Persona para servir: ' + (s.server ? 'Sí' : 'No'));
+    var phrases = ['¿Con todo, jefe?', '¿Le pongo piñita?', '¡Ahí van los de pastor!', '¿Roja o verde? ¡Las dos!', 'Pásele, hay de pastor', 'Taqueros de corazón'];
+    var faqData = [
+      ['¿Cuántos tacos salen por persona?', 'Calculamos de 8 a 10 tacos por persona. Los niños y adolescentes comen menos, así que alcanza para todos los invitados.'],
+      ['¿Qué pasa con la carne que sobra?', 'Se queda contigo. No nos llevamos nada: todo lo que sobre es para quien contrató el evento.'],
+      ['¿Cuánto tiempo dura el servicio?', 'Servimos 2 horas. Llegamos 1 hora antes a montar y nos tomamos 1 hora al final para recoger.'],
+      ['¿Desde cuántas personas hacen taquiza?', 'La taquiza al pastor es para eventos desde 50 personas, a $150 por persona.'],
+      ['¿Puedo agregar tortas o gringas?', 'Sí. Tortas al pastor +$800 y gringas +$1,000 por cada 50 personas, una para cada invitado, con la carne de tu mismo trompo.'],
+      ['¿Con cuánta anticipación pido guisados?', 'Con 1 semana de anticipación, mínimo 3 guisados y 50% de anticipo para apartar la fecha.'],
+      ['¿A qué zonas van?', 'Cuautitlán Izcalli y alrededores. Escríbenos tu colonia por WhatsApp y te confirmamos.']
+    ];
+    var faqs = faqData.map(function (f, i) {
+      var open = s.faq === i;
+      return { q: f[0], a: f[1], open: open, sign: open ? '−' : '+', toggle: function () { self.setState({ faq: self.state.faq === i ? -1 : i }); } };
+    });
+    var g = s.g;
+    var look = {
+      pastor: 'width: 30px; height: 22px; border-radius: 9px 12px 7px 10px; background: linear-gradient(160deg, #D27A35, #7E3410); box-shadow: inset -3px -3px 0 rgba(0,0,0,.25);',
+      pina: 'width: 26px; height: 26px; border-radius: 7px; background: repeating-linear-gradient(45deg, #F2C14E 0 6px, #C98F22 6px 8px);',
+      cebolla: 'width: 24px; height: 24px; border-radius: 50%; background: radial-gradient(circle, #FFFFFF 30%, #E9E4F2 31% 45%, #FFFFFF 46%); border: 2px solid #D8D0E6;',
+      cilantro: 'width: 24px; height: 24px; border-radius: 0 100% 0 100%; background: #3BAA5A; box-shadow: inset 2px 2px 0 #6FD08B;',
+      quemado: 'width: 30px; height: 22px; border-radius: 9px 12px 7px 10px; background: #1A1410; box-shadow: 0 0 10px #E8572A, inset 0 0 6px #5A2A14;'
+    };
+    var gItems = g.items.map(function (it) {
+      return { style: 'position: absolute; left: ' + it.x.toFixed(2) + '%; top: ' + it.y.toFixed(1) + 'px; transform: translateX(-50%) rotate(' + ((it.id * 47) % 360) + 'deg); ' + look[it.kind] };
+    });
+    var gPops = g.pops.map(function (p) {
+      return { text: p.text, style: 'position: absolute; left: ' + p.x.toFixed(2) + '%; top: ' + p.y.toFixed(1) + 'px; transform: translateX(-50%); font-family: Anton, Impact, sans-serif; font-size: 24px; white-space: nowrap; opacity: ' + Math.min(1, p.life * 2).toFixed(2) + '; color: ' + (p.bad ? '#FF8A6A' : '#8FE3B0') + ';' };
+    });
+    var verdict = g.score >= 40 ? '¡Eres maestro taquero!' : g.score >= 20 ? '¡Ya la armaste, jefe!' : '¡Échale más ganas!';
+    var lv = ''; for (var li = 0; li < g.lives; li++) lv += '♥';
+    return {
+      gItems: gItems,
+      gPops: gPops,
+      gPlayerStyle: 'position: absolute; left: ' + g.x.toFixed(2) + '%; top: 312px; transform: translateX(-50%);',
+      gScore: g.score,
+      gLivesText: lv || '—',
+      gTime: Math.ceil(g.t),
+      gBest: g.best,
+      gIdle: g.mode === 'idle',
+      gOver: g.mode === 'over',
+      gVerdict: verdict,
+      gStart: function () { self.gStartGame(); },
+      gPointer: function (e) { if (self.state.g.mode === 'play') self.gSetX(e.clientX, e.currentTarget); },
+      gKey: function (e) {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+          e.preventDefault();
+          var d = e.key === 'ArrowLeft' ? -6 : 6;
+          self.setState({ g: Object.assign({}, self.state.g, { x: Math.max(8, Math.min(92, self.state.g.x + d)) }) });
+        }
+      },
+      gLeftDown: function () { self.gDir = -1; },
+      gRightDown: function () { self.gDir = 1; },
+      gStop: function () { self.gDir = 0; },
+      gShare: 'https://wa.me/?text=' + encodeURIComponent('¡Armé ' + g.score + ' tacos en el juego de Tacos Esmeralda! ¿Me ganas? Taquizas al 56 5088 6350'),
+      faqs: faqs,
+      phraseText: phrases[s.phrase % phrases.length], phraseEven: s.phrase % 2 === 0, phraseOdd: s.phrase % 2 === 1,
+      guisados: guisados,
+      isTaquiza: isT,
+      isGuisados: !isT,
+      taquizaStyle: chip(isT),
+      guisadosStyle: chip(!isT),
+      pickTaquiza: function () { self.setState({ service: 'taquiza' }); },
+      pickGuisados: function () { self.setState({ service: 'guisados' }); },
+      people: s.people,
+      lessPeople: function () { self.setState({ people: Math.max(5, self.state.people - 5) }); },
+      morePeople: function () { self.setState({ people: self.state.people + 5 }); },
+      onDate: function (e) { self.setState({ date: e.target.value }); },
+      onPlace: function (e) { self.setState({ place: e.target.value }); },
+      tortas: s.tortas, tortasStyle: chip(s.tortas), toggleTortas: toggle('tortas'),
+      gringas: s.gringas, gringasStyle: chip(s.gringas), toggleGringas: toggle('gringas'),
+      server: s.server, serverStyle: chip(s.server), toggleServer: toggle('server'),
+      serverLabel: s.server ? 'Sí, agregar ($280 · 2.5 h)' : 'No, gracias',
+      pickedCount: chosen.length,
+      lines: lines,
+      estimate: estimate,
+      estimateLabel: estimateLabel,
+      hasWarning: warning !== '',
+      warning: warning,
+      waLink: 'https://wa.me/525650886350?text=' + encodeURIComponent(msg.join('\n'))
+    };
+  }
+}
+
+DCMount(Component, document.getElementById('tpl'), document.getElementById('app'));
+</script>
+</body>
+</html>
