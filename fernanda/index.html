@@ -3,286 +3,235 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Una invitación real para Fernanda 👑</title>
-<meta name="description" content="Te invito a desayunar por tus 26 primaveras 🌸">
-<meta property="og:title" content="Una invitación especial para ti 💖">
-<meta property="og:description" content="Te invito a desayunar por tus 26 primaveras 🌸">
+<title>Una invitación encantada para Fernanda 🌸</title>
+<meta name="description" content="Para el amor de mi vida 💖">
+<meta property="og:title" content="Una invitación encantada para Fernanda 🌸">
+<meta property="og:description" content="Para el amor de mi vida 💖">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --rosa-1:#fff0f6; --rosa-2:#ffd6e8; --rosa-3:#ff9ec7; --rosa-4:#f0609e; --rosa-5:#c2185b;
-    --oro:#e8b96a; --oro-claro:#fbe3b4;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
+  /* VOICE: tierna, mágica, de cuento.
+     IDEA: un bosque encantado de noche; al tocar la flor mágica, florece la invitación.
+     PICTURE: árboles en capas, hongos que brillan, luciérnagas y una flor rosa en el centro.
+     COLOUR/TYPE: verde bosque profundo + rosa + dorado de luciérnaga; Great Vibes y Cormorant.
+     LAYOUT: una sola escena a pantalla completa; la tarjeta aparece encima. */
+  :root{--verde-0:#071a13;--verde-1:#0d2b20;--musgo:#2f6b4a;--rosa-f:#e0407f;--luz:#f6f3a0}
+  *{box-sizing:border-box;margin:0;padding:0;min-width:0}
   html,body{height:100%}
-  body{
-    min-height:100vh; overflow-x:hidden;
-    font-family:'Quicksand',sans-serif; color:var(--rosa-5);
-    background:
-      radial-gradient(circle at 20% 15%, #ffe3f0 0%, transparent 45%),
-      radial-gradient(circle at 85% 80%, #ffd0e6 0%, transparent 50%),
-      linear-gradient(160deg,#fff5fa 0%,#ffe1ee 50%,#ffc8df 100%);
-    display:flex; align-items:center; justify-content:center;
-  }
-  #cielo{position:fixed;inset:0;pointer-events:none;z-index:0}
+  body{min-height:100vh;overflow:hidden;font-family:'Quicksand',sans-serif;color:#7a1d47;
+    background:radial-gradient(ellipse at 50% 30%,#1d5a40 0%,var(--verde-1) 45%,var(--verde-0) 100%)}
+  #fx{position:fixed;inset:0;z-index:6;pointer-events:none}
 
-  /* ---------- SOBRE ---------- */
-  .escena{position:relative;z-index:2;width:min(92vw,420px);perspective:1200px}
-  .sobre{
-    position:relative; width:100%; aspect-ratio:4/3; cursor:pointer;
-    transition:transform .9s cubic-bezier(.6,-0.3,.3,1.3), opacity .7s;
-    filter:drop-shadow(0 25px 35px rgba(194,24,91,.28));
-    animation:flotar 4s ease-in-out infinite;
-  }
-  @keyframes flotar{50%{transform:translateY(-10px)}}
-  .sobre .cuerpo{position:absolute;inset:0;border-radius:14px;
-    background:linear-gradient(145deg,#ffb6d5,#ff8dbd);}
-  .sobre .lado{position:absolute;inset:0;border-radius:14px;
-    background:linear-gradient(200deg,#ffc4de,#ff9fc8);
-    clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%)}
-  .sobre .solapa{position:absolute;left:0;right:0;top:0;height:62%;
-    background:linear-gradient(180deg,#ffd3e6,#ffa9cf);
-    clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;
-    transition:transform .8s ease;border-radius:14px 14px 0 0;z-index:3}
-  .sello{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);z-index:4;
-    width:78px;height:78px;border-radius:50%;
-    background:radial-gradient(circle at 35% 30%,#ff7fb2,#c2185b);
-    box-shadow:0 0 0 4px rgba(255,255,255,.35),0 8px 18px rgba(120,0,50,.35);
-    display:grid;place-items:center;transition:transform .5s, opacity .5s}
-  .sello svg{width:44px;height:44px}
-  .toca{position:absolute;left:0;right:0;bottom:-58px;text-align:center;
-    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem;
-    color:var(--rosa-4);animation:latido 1.6s ease-in-out infinite}
-  @keyframes latido{50%{opacity:.45;transform:scale(.97)}}
-  .para-quien{position:absolute;left:0;right:0;top:-88px;text-align:center;
-    font-family:'Great Vibes',cursive;font-size:clamp(1.9rem,8vw,2.4rem);line-height:1.1;color:var(--rosa-5)}
+  .escena{position:fixed;inset:0;z-index:1}
+  .escena svg{position:absolute;left:0;bottom:0;width:100%;height:100%}
+  .luna{position:absolute;top:3%;right:7%;width:64px;height:64px;border-radius:50%;
+    background:radial-gradient(circle at 40% 40%,#fffbe8,#f3e7b5 60%,#d8c88a);
+    box-shadow:0 0 40px 12px rgba(255,246,200,.35),0 0 120px 40px rgba(255,240,190,.12)}
+  .titulo{position:absolute;z-index:4;left:0;right:0;top:15vh;text-align:center;padding:0 16px;font-weight:400;
+    font-family:'Great Vibes',cursive;font-size:clamp(2.3rem,10vw,3.4rem);line-height:1.1;color:#ffe1ee;
+    text-shadow:0 0 18px rgba(255,143,191,.75),0 2px 4px rgba(0,0,0,.4);transition:opacity .8s}
+  .sub{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:#d9f2c4;margin-top:8px;text-shadow:0 0 10px rgba(246,243,160,.5)}
 
-  .abierto .solapa{transform:rotateX(180deg)}
-  .abierto .sello{transform:translate(-50%,-50%) scale(0);opacity:0}
-  .escena.fuera .sobre{transform:translateY(60px) scale(.85);opacity:0;pointer-events:none}
-  .escena.fuera .toca,.escena.fuera .para-quien{opacity:0;transition:opacity .4s}
+  .flor{position:absolute;z-index:4;left:50%;bottom:20vh;transform:translateX(-50%);width:150px;height:170px;
+    cursor:pointer;border:0;background:none;-webkit-tap-highlight-color:transparent;transition:opacity .6s}
+  .flor:focus-visible{outline:2px dashed var(--luz);outline-offset:6px;border-radius:20px}
+  .flor svg{width:100%;height:100%;overflow:visible}
+  .flor .halo{animation:halo 2.4s ease-in-out infinite;transform-origin:75px 70px}
+  @keyframes halo{50%{opacity:.35;transform:scale(1.18)}}
+  .flor .petalos{transform-origin:75px 70px;transition:transform 1.2s cubic-bezier(.3,1.6,.4,1)}
+  .flor.abierta .petalos{transform:scale(1.35) rotate(25deg)}
+  .toca{position:absolute;z-index:4;left:0;right:0;bottom:12vh;text-align:center;
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:#f6f3a0;
+    text-shadow:0 0 10px rgba(246,243,160,.8);animation:latido 1.8s ease-in-out infinite;transition:opacity .6s}
+  @keyframes latido{50%{opacity:.4}}
+  .oculto{opacity:0!important;pointer-events:none;animation:none!important}
 
-  /* ---------- TARJETA ---------- */
-  .tarjeta{
-    position:fixed; z-index:5; left:50%; top:50%;
-    width:min(90vw,410px); max-height:92vh; overflow:auto;
-    transform:translate(-50%,-30%) scale(.6); opacity:0; pointer-events:none;
-    transition:transform 1s cubic-bezier(.2,1.2,.3,1), opacity .8s;
-    padding:14px; border-radius:28px;
-    background:linear-gradient(135deg,var(--oro-claro),var(--oro),#fff3dc,var(--oro));
-    box-shadow:0 30px 60px rgba(194,24,91,.35);
-  }
+  .tarjeta{position:fixed;z-index:5;left:50%;top:50%;width:min(92vw,410px);max-height:92vh;overflow:auto;
+    transform:translate(-50%,-40%) scale(.5);opacity:0;pointer-events:none;
+    transition:transform 1.1s cubic-bezier(.2,1.3,.3,1),opacity .9s;
+    padding:12px;border-radius:30px;
+    background:linear-gradient(140deg,#3f8a5f,#2f6b4a 40%,#58a374 70%,#2f6b4a);
+    box-shadow:0 0 0 2px rgba(246,243,160,.35),0 0 50px rgba(246,243,160,.25),0 30px 60px rgba(0,0,0,.5)}
   .tarjeta.ver{transform:translate(-50%,-50%) scale(1);opacity:1;pointer-events:auto}
-  .interior{
-    position:relative; border-radius:20px; padding:38px 26px 34px; text-align:center;
-    background:
-      radial-gradient(circle at 50% 0%,#fff 0%,transparent 60%),
-      linear-gradient(180deg,#fff7fb 0%,#ffe6f1 100%);
-    overflow:hidden;
-  }
-  .interior::before{content:"";position:absolute;inset:10px;border-radius:14px;
-    border:1.5px dashed rgba(240,96,158,.45);pointer-events:none}
-  .corona{width:92px;margin:0 auto 6px;display:block;
-    filter:drop-shadow(0 4px 6px rgba(232,185,106,.6));animation:brillo 3s ease-in-out infinite}
-  @keyframes brillo{50%{filter:drop-shadow(0 0 14px rgba(255,215,140,.95))}}
-  .castillo{width:min(100%,250px);display:block;margin:-6px auto 4px;
-    filter:drop-shadow(0 6px 10px rgba(214,58,122,.25));animation:brillo 3s ease-in-out infinite}
-  @keyframes brillo{50%{filter:drop-shadow(0 0 16px rgba(255,200,225,.95))}}
-  .decreto{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:.95rem;letter-spacing:2px;color:#b8843a;margin-top:6px}
-  .titulo-real{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:#9b2a59;margin-top:2px}
-  .separador{display:flex;align-items:center;gap:10px;justify-content:center;color:#e8b96a;font-size:1.3rem;margin:10px 0 2px}
-  .separador span{height:1px;width:70px;background:linear-gradient(90deg,transparent,#e8b96a,transparent)}
-  .nota{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:#c46a94;margin-top:12px}
-  .hora{display:inline-flex;flex-direction:column;align-items:center;margin:10px auto 4px;padding:12px 26px;border-radius:18px;
-    background:linear-gradient(180deg,#fff,#ffeef6);border:1.5px solid #f3c98a;box-shadow:0 6px 16px rgba(214,58,122,.15)}
-  .hora-et{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:#9b2a59}
-  .hora-num{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:2rem;line-height:1.1;color:#c2185b}
-  .hola{font-family:'Great Vibes',cursive;font-size:clamp(2.2rem,9vw,2.8rem);color:var(--rosa-4);line-height:1.1}
-  .linea1{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:#8a1745;margin-top:10px;letter-spacing:.5px}
-  .desayuno{font-family:'Great Vibes',cursive;font-size:clamp(2.8rem,12vw,3.6rem);line-height:1;margin:4px 0 8px;
-    background:linear-gradient(90deg,#c2185b,#ff5fa2,#c2185b);-webkit-background-clip:text;background-clip:text;color:transparent;
-    background-size:200% auto;animation:shimmer 4s linear infinite}
+  .interior{position:relative;border-radius:22px;padding:30px 22px;text-align:center;overflow:hidden;
+    background:radial-gradient(circle at 50% 0%,#fff 0%,transparent 55%),linear-gradient(180deg,#fff8fb,#ffe6f1)}
+  .interior::before{content:"";position:absolute;inset:9px;border-radius:16px;border:1.5px dashed rgba(47,107,74,.4);pointer-events:none}
+  .enredadera{position:absolute;width:110px;height:110px;pointer-events:none}
+  .enredadera.a{top:-4px;left:-4px}.enredadera.b{bottom:-4px;right:-4px;transform:rotate(180deg)}
+  .corona{width:70px;display:block;margin:0 auto 2px;filter:drop-shadow(0 3px 5px rgba(232,194,122,.6))}
+  .cuento{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:#2f6b4a}
+  .hola{font-family:'Great Vibes',cursive;font-size:clamp(2.6rem,11vw,3.2rem);line-height:1.1;color:var(--rosa-f);margin-top:2px}
+  .titulo-real{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:#9b2a59}
+  .sep{display:flex;align-items:center;gap:10px;justify-content:center;color:var(--musgo);margin:10px 0 4px;font-size:1.1rem}
+  .sep span{height:1px;width:64px;background:linear-gradient(90deg,transparent,var(--musgo),transparent)}
+  .linea1{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:#7a1d47}
+  .desayuno{font-family:'Great Vibes',cursive;font-size:clamp(2.8rem,12vw,3.5rem);line-height:1.05;margin:2px 0 4px;
+    background:linear-gradient(90deg,#2f6b4a,#e0407f,#2f6b4a);-webkit-background-clip:text;background-clip:text;color:transparent;
+    background-size:200% auto;animation:shimmer 5s linear infinite}
   @keyframes shimmer{to{background-position:200% center}}
-  .por{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:#8a1745}
-  .numero{
-    font-family:'Cormorant Garamond',serif;font-weight:600;font-size:6.2rem;line-height:1;margin:2px 0 -6px;
-    background:linear-gradient(180deg,#fbe3b4 0%,#e8b96a 45%,#b8843a 100%);
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-    filter:drop-shadow(0 3px 2px rgba(194,24,91,.25))}
-  .primaveras{font-family:'Great Vibes',cursive;font-size:2.7rem;color:var(--rosa-4)}
-  .flores{font-size:1.5rem;letter-spacing:8px;margin:10px 0 4px}
-    .msg{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:#9b2a59;line-height:1.45;margin:8px auto 0;max-width:300px}
-  .btn{
-    margin-top:22px;border:0;cursor:pointer;font-family:'Quicksand',sans-serif;font-weight:600;font-size:1.05rem;
-    color:#fff;padding:14px 30px;border-radius:999px;
-    background:linear-gradient(135deg,#ff7fb2,#e0407f);
-    box-shadow:0 10px 22px rgba(224,64,127,.4), inset 0 1px 0 rgba(255,255,255,.5);
-    transition:transform .2s, box-shadow .2s}
+  .por{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:#7a1d47}
+  .numero{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(4.8rem,22vw,6rem);line-height:1;margin:0 0 -6px;
+    background:linear-gradient(180deg,#fff2c9 0%,#e8c27a 45%,#a77a32 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 3px 2px rgba(47,107,74,.3))}
+  .primaveras{font-family:'Great Vibes',cursive;font-size:2.6rem;color:var(--rosa-f)}
+  .hora{display:inline-flex;flex-direction:column;align-items:center;margin:12px auto 4px;padding:12px 24px;border-radius:18px;
+    background:linear-gradient(180deg,#fff,#eefbf2);border:1.5px solid #9cd3ae;box-shadow:0 6px 16px rgba(47,107,74,.18)}
+  .hora-et{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:#2f6b4a}
+  .hora-num{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:2rem;line-height:1.1;color:var(--rosa-f)}
+  .msg{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:#8a2453;line-height:1.45;margin:14px auto 0;max-width:310px}
+  .nota{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:#3f7d5a;margin-top:12px}
+  .btn{margin-top:16px;border:0;cursor:pointer;font-family:'Quicksand',sans-serif;font-weight:600;font-size:1.05rem;color:#fff;
+    padding:15px 26px;min-height:48px;border-radius:999px;background:linear-gradient(135deg,#ff8fbf,#e0407f);
+    box-shadow:0 0 0 3px rgba(156,211,174,.6),0 10px 22px rgba(224,64,127,.4),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .2s}
   .btn:active{transform:scale(.95)}
-  .respuesta{margin-top:16px;font-family:'Great Vibes',cursive;font-size:2rem;color:var(--rosa-4);
-    opacity:0;transform:translateY(8px);transition:all .6s}
-  .respuesta.ver{opacity:1;transform:none}
-  .firma{margin-top:18px;font-size:.8rem;letter-spacing:3px;text-transform:uppercase;color:var(--rosa-3)}
-  .estrella{position:absolute;color:var(--oro);animation:titilar 2.4s ease-in-out infinite;pointer-events:none}
-  @keyframes titilar{0%,100%{opacity:.2;transform:scale(.6) rotate(0)}50%{opacity:1;transform:scale(1.1) rotate(20deg)}}
-
-  /* ---------- MÚSICA ---------- */
+  .btn:focus-visible{outline:3px solid #2f6b4a;outline-offset:3px}
+  .respuesta{font-family:'Great Vibes',cursive;font-size:1.9rem;color:#2f6b4a;max-height:0;opacity:0;overflow:hidden;transition:all .7s}
+  .respuesta.ver{max-height:120px;opacity:1;margin-top:14px}
+  .firma{margin-top:16px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:#3f7d5a}
   .musica{position:fixed;right:16px;bottom:16px;z-index:9;width:46px;height:46px;border-radius:50%;border:0;
-    background:rgba(255,255,255,.75);backdrop-filter:blur(6px);box-shadow:0 6px 16px rgba(194,24,91,.25);
-    font-size:1.3rem;cursor:pointer;display:none}
-
-  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+    background:rgba(255,255,255,.25);backdrop-filter:blur(6px);box-shadow:0 0 14px rgba(246,243,160,.4);font-size:1.2rem;cursor:pointer;display:none}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
 </style>
 </head>
 <body>
-<canvas id="cielo"></canvas>
 
-<div class="escena" id="escena">
-  <div class="para-quien" id="paraQuien">Para el amor de mi vida</div>
-  <div class="sobre" id="sobre" role="button" aria-label="Abrir invitación" tabindex="0">
-    <div class="cuerpo"></div>
-    <div class="lado"></div>
-    <div class="solapa"></div>
-    <div class="sello">
-      <svg viewBox="0 0 24 24" fill="#fff"><path d="M3 18 L2 7 L7.5 11 L12 4 L16.5 11 L22 7 L21 18 Z"/><rect x="3" y="19" width="18" height="2.4" rx="1"/></svg>
-    </div>
-  </div>
-  <div class="toca">✨ Toca el sello real ✨</div>
+<div class="escena" aria-hidden="true">
+  <div class="luna"></div>
+  <svg viewBox="0 0 400 800" preserveAspectRatio="xMidYMax slice">
+    <defs>
+      <radialGradient id="hongo" cx=".5" cy=".3" r=".7"><stop offset="0" stop-color="#ffd1e6"/><stop offset="1" stop-color="#e0407f"/></radialGradient>
+      <radialGradient id="brilloH" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ff8fbf" stop-opacity=".55"/><stop offset="1" stop-color="#ff8fbf" stop-opacity="0"/></radialGradient>
+      <linearGradient id="niebla" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe8cf" stop-opacity="0"/><stop offset="1" stop-color="#bfe8cf" stop-opacity=".18"/></linearGradient>
+      <g id="pino"><path d="M0 0 L-38 70 H-16 L-48 130 H-20 L-58 200 H58 L20 130 H48 L16 70 H38 Z"/><rect x="-7" y="200" width="14" height="40"/></g>
+      <g id="hg"><ellipse cx="0" cy="0" rx="34" ry="26" fill="url(#brilloH)"/><rect x="-4" y="-2" width="8" height="18" rx="3" fill="#fbe9d6"/><path d="M-16 0 Q0 -22 16 0 Z" fill="url(#hongo)"/><circle cx="-6" cy="-7" r="2.2" fill="#fff"/><circle cx="5" cy="-9" r="1.6" fill="#fff"/></g>
+    </defs>
+    <g fill="#0f3326" opacity=".85">
+      <use href="#pino" transform="translate(30 360) scale(1.1)"/><use href="#pino" transform="translate(120 330) scale(.9)"/>
+      <use href="#pino" transform="translate(290 340) scale(1)"/><use href="#pino" transform="translate(380 320) scale(1.2)"/>
+    </g>
+    <rect x="0" y="480" width="400" height="320" fill="url(#niebla)"/>
+    <g fill="#082219">
+      <use href="#pino" transform="translate(-10 420) scale(1.6)"/><use href="#pino" transform="translate(410 400) scale(1.7)"/>
+      <use href="#pino" transform="translate(70 500) scale(1.1)"/><use href="#pino" transform="translate(340 500) scale(1.15)"/>
+    </g>
+    <path d="M0 690 Q100 650 200 668 T400 660 V800 H0 Z" fill="#0b2a1f"/>
+    <path d="M150 800 Q180 740 200 690 Q220 740 250 800 Z" fill="#1f4f3a" opacity=".8"/>
+    <g fill="#ff8fbf"><circle cx="175" cy="760" r="3"/><circle cx="226" cy="752" r="3"/><circle cx="185" cy="728" r="2.4"/><circle cx="216" cy="722" r="2.4"/><circle cx="193" cy="704" r="2"/><circle cx="207" cy="700" r="2"/></g>
+    <use href="#hg" transform="translate(70 690)"/><use href="#hg" transform="translate(100 705) scale(.7)"/>
+    <use href="#hg" transform="translate(320 684) scale(1.1)"/><use href="#hg" transform="translate(350 700) scale(.65)"/>
+  </svg>
 </div>
+
+<h1 class="titulo" id="titulo">Para el amor de mi vida<span class="sub">Había una vez, en un bosque encantado…</span></h1>
+
+<button class="flor" id="flor" aria-label="Tocar la flor mágica para abrir la invitación">
+  <svg viewBox="0 0 150 170">
+    <circle class="halo" cx="75" cy="70" r="46" fill="#ff8fbf" opacity=".25"/>
+    <path d="M75 92 Q72 130 75 168" stroke="#58a374" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M75 132 Q50 118 40 128 Q55 140 75 136Z" fill="#58a374"/><path d="M75 148 Q100 134 112 144 Q96 156 75 152Z" fill="#3f8a5f"/>
+    <g class="petalos">
+      <g fill="#ff8fbf"><ellipse cx="75" cy="44" rx="15" ry="26"/><ellipse cx="75" cy="44" rx="15" ry="26" transform="rotate(72 75 70)"/><ellipse cx="75" cy="44" rx="15" ry="26" transform="rotate(144 75 70)"/><ellipse cx="75" cy="44" rx="15" ry="26" transform="rotate(216 75 70)"/><ellipse cx="75" cy="44" rx="15" ry="26" transform="rotate(288 75 70)"/></g>
+      <g fill="#ffd1e6"><ellipse cx="75" cy="52" rx="8" ry="15"/><ellipse cx="75" cy="52" rx="8" ry="15" transform="rotate(72 75 70)"/><ellipse cx="75" cy="52" rx="8" ry="15" transform="rotate(144 75 70)"/><ellipse cx="75" cy="52" rx="8" ry="15" transform="rotate(216 75 70)"/><ellipse cx="75" cy="52" rx="8" ry="15" transform="rotate(288 75 70)"/></g>
+      <circle cx="75" cy="70" r="11" fill="#f6e27a"/><circle cx="72" cy="67" r="3" fill="#fff8d0"/>
+    </g>
+  </svg>
+</button>
+<div class="toca" id="toca">✨ Toca la flor mágica ✨</div>
 
 <div class="tarjeta" id="tarjeta" aria-live="polite">
-  <div class="interior" id="interior">
-    <svg class="castillo" viewBox="0 0 240 150" aria-hidden="true">
-      <defs>
-        <linearGradient id="cR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe4f0"/><stop offset="1" stop-color="#ffb3d4"/></linearGradient>
-        <linearGradient id="cT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7fb2"/><stop offset="1" stop-color="#d63a7a"/></linearGradient>
-        <linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff1cf"/><stop offset=".5" stop-color="#e8b96a"/><stop offset="1" stop-color="#b8843a"/></linearGradient>
-      </defs>
-      <g stroke="#e58bb3" stroke-width="1">
-        <rect x="30" y="70" width="34" height="78" fill="url(#cR)"/><polygon points="25,72 47,22 69,72" fill="url(#cT)"/>
-        <rect x="176" y="70" width="34" height="78" fill="url(#cR)"/><polygon points="171,72 193,22 215,72" fill="url(#cT)"/>
-        <rect x="64" y="88" width="112" height="60" fill="url(#cR)"/>
-        <rect x="98" y="52" width="44" height="96" fill="url(#cR)"/><polygon points="92,55 120,2 148,55" fill="url(#cT)"/>
-        <path d="M108 148 v-24 a12 12 0 0 1 24 0 v24z" fill="#d63a7a"/>
-      </g>
-      <g fill="#fff" opacity=".9"><path d="M42 95 a5 5 0 0 1 10 0 v10 h-10z"/><path d="M188 95 a5 5 0 0 1 10 0 v10 h-10z"/><circle cx="120" cy="76" r="7"/></g>
-      <g fill="#ff5fa2"><path d="M47 22 v-12 l12 4 -12 4"/><path d="M193 22 v-12 l12 4 -12 4"/><path d="M120 2 v-1"/></g>
-      <path d="M104 -1 l6 9 10-8 10 8 6-9 -3 14 h-26z" transform="translate(0,-2) scale(1)" fill="url(#g)" opacity="0"/>
-      <g fill="#f5cf86"><circle cx="16" cy="40" r="2"/><circle cx="224" cy="48" r="2.4"/><circle cx="82" cy="30" r="1.6"/><circle cx="160" cy="26" r="1.8"/></g>
-    </svg>
+  <div class="interior">
+    <svg class="enredadera a" viewBox="0 0 120 120" aria-hidden="true"><path d="M6 110 Q10 40 60 14 Q86 4 112 8" stroke="#58a374" stroke-width="3" fill="none"/><g fill="#58a374"><ellipse cx="22" cy="72" rx="9" ry="5" transform="rotate(-60 22 72)"/><ellipse cx="40" cy="38" rx="9" ry="5" transform="rotate(-35 40 38)"/><ellipse cx="80" cy="12" rx="9" ry="5" transform="rotate(-10 80 12)"/></g><g fill="#ff8fbf"><circle cx="12" cy="92" r="6"/><circle cx="58" cy="18" r="6"/><circle cx="100" cy="9" r="5"/></g></svg>
+    <svg class="enredadera b" viewBox="0 0 120 120" aria-hidden="true"><path d="M6 110 Q10 40 60 14 Q86 4 112 8" stroke="#58a374" stroke-width="3" fill="none"/><g fill="#58a374"><ellipse cx="22" cy="72" rx="9" ry="5" transform="rotate(-60 22 72)"/><ellipse cx="40" cy="38" rx="9" ry="5" transform="rotate(-35 40 38)"/><ellipse cx="80" cy="12" rx="9" ry="5" transform="rotate(-10 80 12)"/></g><g fill="#ff8fbf"><circle cx="12" cy="92" r="6"/><circle cx="58" cy="18" r="6"/><circle cx="100" cy="9" r="5"/></g></svg>
 
-    <div class="decreto">✦ Por decreto real ✦</div>
-    <div class="hola" id="hola">Su Alteza, Fernanda</div>
-    <div class="titulo-real">Princesa de mi corazón</div>
-    <div class="separador"><span></span>♛<span></span></div>
-    <p class="linea1">Queda cordialmente invitada a un</p>
-    <div class="desayuno">Desayuno Real</div>
-    <div class="por">en honor a sus</div>
+    <svg class="corona" viewBox="0 0 120 80" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff1cf"/><stop offset=".5" stop-color="#e8c27a"/><stop offset="1" stop-color="#a77a32"/></linearGradient></defs><path d="M10 68 L6 22 L34 44 L60 8 L86 44 L114 22 L110 68 Z" fill="url(#g)" stroke="#a77a32" stroke-width="1.5" stroke-linejoin="round"/><rect x="10" y="64" width="100" height="10" rx="3" fill="url(#g)"/><circle cx="60" cy="8" r="6" fill="#ff8fbf"/><circle cx="6" cy="22" r="5" fill="#9cd3ae"/><circle cx="114" cy="22" r="5" fill="#9cd3ae"/><circle cx="60" cy="54" r="6" fill="#e0407f"/></svg>
+
+    <div class="cuento">Y en ese bosque encantado vivía…</div>
+    <div class="hola">Fernanda</div>
+    <div class="titulo-real">la princesa más hermosa del reino</div>
+    <div class="sep"><span></span>❦<span></span></div>
+    <p class="linea1">Y hoy su enamorado la invita a</p>
+    <div class="desayuno">desayunar</div>
+    <div class="por">para celebrar sus</div>
     <div class="numero">26</div>
     <div class="primaveras">primaveras</div>
-    <div class="flores">🌸 👑 🌸</div>
     <div class="hora"><span class="hora-et">La carroza pasará por ti a las</span><span class="hora-num">11:00 a.m.</span></div>
-    <p class="msg">Hace 26 primaveras el mundo recibió a su princesa más hermosa. Hoy este reino solo tiene un deseo: consentirte, celebrarte y verte sonreír, amor de mi vida.</p>
-    <p class="nota">Esta invitación real solo admite una respuesta.</p>
-
+    <p class="msg">Porque de todos los cuentos que existen, el mío empezó el día que te conocí. Eres el amor de mi vida y mereces un día tan mágico como tú.</p>
+    <p class="nota">Esta invitación encantada solo tiene una respuesta.</p>
     <button class="btn" id="acepto">Sí, acepto, ¡claro que acepto! 💖</button>
-    <div class="respuesta" id="respuesta">Y vivieron felices para siempre… 👑💕</div>
-    <div class="firma">Con todo el amor de tu príncipe</div>
+    <div class="respuesta" id="respuesta">…y vivieron felices para siempre 🌸💕</div>
+    <div class="firma">Con todo mi amor, tu príncipe</div>
   </div>
 </div>
 
-<script>
-(function(){
-  // ---- Personalización por link: ?para=Nombre ----
-  const qs = new URLSearchParams(location.search);
-  const nombre = (qs.get('para') || '').trim().slice(0,30);
-  if(nombre){
-    const limpio = nombre.replace(/[<>]/g,'');
-    document.getElementById('paraQuien').textContent = 'Para ' + limpio;
-    document.getElementById('hola').textContent = 'Hola, ' + limpio;
-    document.title = 'Una invitación especial para ' + limpio + ' 💖';
-  }
+<canvas id="fx"></canvas>
+<button class="musica" id="musica" aria-label="Música">🎵</button>
 
-  // ---- Partículas: pétalos, corazones y brillitos ----
-  const cv = document.getElementById('cielo'), ctx = cv.getContext('2d');
-  let W,H,dpr; const P=[];
-  function size(){dpr=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
-  size(); addEventListener('resize',size);
-  const colores=['#ff9ec7','#ffb6d5','#f0609e','#ffd6e8','#ff7fb2'];
-  function nueva(top){
-    const t=Math.random();
-    return {x:Math.random()*W,y:top?-20:Math.random()*H,s:6+Math.random()*10,
-      vy:.4+Math.random()*.9,vx:-.3+Math.random()*.6,r:Math.random()*6.28,vr:-.02+Math.random()*.04,
-      tipo:t<.5?'petalo':t<.78?'corazon':'brillo',c:colores[Math.random()*colores.length|0],f:Math.random()*6.28}
-  }
-  const N = innerWidth<600?38:60; for(let i=0;i<N;i++)P.push(nueva(false));
-  function corazon(s){ctx.beginPath();ctx.moveTo(0,s*.3);ctx.bezierCurveTo(-s,-s*.4,-s*.4,-s,0,-s*.35);ctx.bezierCurveTo(s*.4,-s,s,-s*.4,0,s*.3);ctx.fill()}
-  function petalo(s){ctx.beginPath();ctx.ellipse(0,0,s*.45,s*.8,0,0,6.28);ctx.fill()}
-  function brillo(s,f){ctx.globalAlpha=.4+.6*Math.abs(Math.sin(f));ctx.fillStyle='#f5cf86';ctx.beginPath();
-    for(let i=0;i<4;i++){const a=i*Math.PI/2;ctx.lineTo(Math.cos(a)*s*.7,Math.sin(a)*s*.7);ctx.lineTo(Math.cos(a+.785)*s*.18,Math.sin(a+.785)*s*.18)}ctx.fill();ctx.globalAlpha=1}
-  function loop(){
+<script>
+{
+  const cv=document.getElementById('fx'),ctx=cv.getContext('2d');
+  let W=0,H=0;
+  const size=()=>{const d=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0)};
+  size();addEventListener('resize',size);
+
+  const L=[];const nL=innerWidth<600?34:55;
+  for(let i=0;i<nL;i++)L.push({x:Math.random()*W,y:H*.25+Math.random()*H*.75,a:Math.random()*6.28,v:.2+Math.random()*.5,f:Math.random()*6.28,s:1.4+Math.random()*2});
+  const P=[];
+  const pal=['#ff8fbf','#ffd1e6','#e0407f','#f6f3a0','#9cd3ae','#fff'];
+  const lluvia=(x,y,n,fuerza)=>{for(let i=0;i<n;i++){const a=Math.random()*6.28,v=2+Math.random()*fuerza;
+    P.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-3,r:Math.random()*6,vr:-.15+Math.random()*.3,s:5+Math.random()*7,c:pal[Math.random()*pal.length|0],vida:140+Math.random()*80,h:Math.random()<.35})}};
+  const corazon=s=>{ctx.beginPath();ctx.moveTo(0,s*.3);ctx.bezierCurveTo(-s,-s*.4,-s*.4,-s,0,-s*.35);ctx.bezierCurveTo(s*.4,-s,s,-s*.4,0,s*.3);ctx.fill()};
+  let abierto=false;
+
+  const loop=()=>{
     ctx.clearRect(0,0,W,H);
-    for(const p of P){
-      p.y+=p.vy;p.x+=p.vx+Math.sin(p.f)*.4;p.r+=p.vr;p.f+=.02;
-      if(p.y>H+20||p.x<-30||p.x>W+30)Object.assign(p,nueva(true));
-      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);ctx.fillStyle=p.c;ctx.globalAlpha=.85;
-      if(p.tipo==='petalo')petalo(p.s);else if(p.tipo==='corazon')corazon(p.s);else brillo(p.s,p.f);
-      ctx.restore();
+    for(const l of L){
+      l.a+=(Math.random()-.5)*.3;l.x+=Math.cos(l.a)*l.v;l.y+=Math.sin(l.a)*l.v;l.f+=.05;
+      if(l.x<-10)l.x=W+10;if(l.x>W+10)l.x=-10;if(l.y<H*.12)l.y=H;if(l.y>H+10)l.y=H*.2;
+      const al=(abierto?.12:1)*(.35+.65*Math.abs(Math.sin(l.f)));
+      const g=ctx.createRadialGradient(l.x,l.y,0,l.x,l.y,l.s*6);
+      g.addColorStop(0,`rgba(246,243,160,${al})`);g.addColorStop(1,'rgba(246,243,160,0)');
+      ctx.fillStyle=g;ctx.beginPath();ctx.arc(l.x,l.y,l.s*6,0,6.28);ctx.fill();
+      ctx.fillStyle=`rgba(255,255,220,${al})`;ctx.beginPath();ctx.arc(l.x,l.y,l.s*.8,0,6.28);ctx.fill();
     }
-    for(let i=C.length-1;i>=0;i--){const c=C[i];c.vy+=.12;c.x+=c.vx;c.y+=c.vy;c.r+=c.vr;c.v--;
-      ctx.save();ctx.translate(c.x,c.y);ctx.rotate(c.r);ctx.fillStyle=c.c;ctx.globalAlpha=Math.min(1,c.v/40);
-      if(c.h)corazon(c.s);else ctx.fillRect(-c.s/2,-c.s/4,c.s,c.s/2);ctx.restore();if(c.v<=0)C.splice(i,1)}
+    for(let i=P.length-1;i>=0;i--){const p=P[i];p.vy+=.08;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;p.vida--;
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);ctx.globalAlpha=Math.min(1,p.vida/40);ctx.fillStyle=p.c;
+      if(p.h)corazon(p.s);else{ctx.beginPath();ctx.ellipse(0,0,p.s*.45,p.s*.8,0,0,6.28);ctx.fill()}
+      ctx.restore();if(p.vida<=0)P.splice(i,1)}
     requestAnimationFrame(loop);
-  }
-  const C=[];
-  function confeti(x,y,n){const pal=['#ff5fa2','#ffd6e8','#e8b96a','#fff','#f0609e','#ffb6d5'];
-    for(let i=0;i<n;i++){const a=Math.random()*6.28,v=3+Math.random()*7;
-      C.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-4,r:Math.random()*6,vr:-.2+Math.random()*.4,s:6+Math.random()*8,
-        c:pal[Math.random()*pal.length|0],v:110+Math.random()*60,h:Math.random()<.35})}}
+  };
   loop();
 
-  // ---- Estrellitas dentro de la tarjeta ----
-  const int=document.getElementById('interior');
-  for(let i=0;i<14;i++){const e=document.createElement('span');e.className='estrella';e.textContent='✦';
-    e.style.left=(4+Math.random()*92)+'%';e.style.top=(3+Math.random()*94)+'%';
-    e.style.fontSize=(8+Math.random()*10)+'px';e.style.animationDelay=(Math.random()*2.4)+'s';int.appendChild(e)}
+  let audio=null,sonando=false,t=null;
+  const notas=[523.25,659.25,783.99,1046.5,987.77,783.99,659.25,698.46,880,783.99,659.25,587.33];
+  const campana=(f,at)=>{const o=audio.createOscillator(),g=audio.createGain();o.type='triangle';o.frequency.value=f;
+    g.gain.setValueAtTime(0,at);g.gain.linearRampToValueAtTime(.08,at+.02);g.gain.exponentialRampToValueAtTime(.0001,at+1.6);
+    o.connect(g).connect(audio.destination);o.start(at);o.stop(at+1.7)};
+  const tocar=()=>{let i=0;const paso=()=>{if(!sonando)return;campana(notas[i%notas.length],audio.currentTime);if(i%4===0)campana(notas[i%notas.length]/2,audio.currentTime);i++;t=setTimeout(paso,460)};paso()};
+  const bm=document.getElementById('musica');
+  bm.addEventListener('click',()=>{sonando=!sonando;bm.textContent=sonando?'🎵':'🔇';if(sonando)tocar();else clearTimeout(t)});
 
-  // ---- Melodía suave (campanitas) con Web Audio, sin archivos ----
-  let audio=null, sonando=false, timer=null;
-  const notas=[659.25,783.99,880,987.77,880,783.99,659.25,587.33,659.25,783.99,659.25,523.25];
-  function campana(f,t){const o=audio.createOscillator(),g=audio.createGain();o.type='sine';o.frequency.value=f;
-    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.12,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+1.4);
-    o.connect(g).connect(audio.destination);o.start(t);o.stop(t+1.5)}
-  function tocar(){let i=0;const paso=()=>{if(!sonando)return;campana(notas[i%notas.length],audio.currentTime);
-    if(i%4===0)campana(notas[i%notas.length]/2,audio.currentTime);i++;timer=setTimeout(paso,420)};paso()}
-  const bm=document.createElement('button');bm.className='musica';bm.setAttribute('aria-label','Música');bm.textContent='🎵';document.body.appendChild(bm);
-  bm.onclick=()=>{sonando=!sonando;bm.textContent=sonando?'🎵':'🔇';if(sonando)tocar();else clearTimeout(timer)};
-
-  // ---- Abrir sobre ----
-  const sobre=document.getElementById('sobre'),escena=document.getElementById('escena'),tarjeta=document.getElementById('tarjeta');
-  let abierto=false;
-  function abrir(){
+  const flor=document.getElementById('flor'),tarjeta=document.getElementById('tarjeta');
+  flor.addEventListener('click',()=>{
     if(abierto)return;abierto=true;
     try{audio=new (window.AudioContext||window.webkitAudioContext)();sonando=true;tocar();bm.style.display='block'}catch(e){}
-    sobre.classList.add('abierto');
-    const r=sobre.getBoundingClientRect();
-    setTimeout(()=>{confeti(r.left+r.width/2,r.top+r.height/2,120);escena.classList.add('fuera')},700);
-    setTimeout(()=>tarjeta.classList.add('ver'),1100);
-  }
-  sobre.addEventListener('click',abrir);
-  sobre.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')abrir()});
-
-  // ---- Aceptar ----
-  document.getElementById('acepto').addEventListener('click',e=>{
-    const r=e.currentTarget.getBoundingClientRect();
-    confeti(r.left+r.width/2,r.top,160);setTimeout(()=>confeti(W*.2,H*.3,70),250);setTimeout(()=>confeti(W*.8,H*.3,70),450);
-    document.getElementById('respuesta').classList.add('ver');
-    e.currentTarget.textContent='¡La princesa ha dicho que sí! 💕';
-    if(navigator.vibrate)navigator.vibrate([60,40,60]);
+    flor.classList.add('abierta');
+    const r=flor.getBoundingClientRect();
+    for(const l of L){l.a=Math.atan2(r.top+70-l.y,r.left+75-l.x);l.v=1.6}
+    setTimeout(()=>{lluvia(r.left+r.width/2,r.top+70,130,8);flor.classList.add('oculto');
+      document.getElementById('toca').classList.add('oculto');document.getElementById('titulo').classList.add('oculto');
+      for(const l of L)l.v=.2+Math.random()*.5},900);
+    setTimeout(()=>tarjeta.classList.add('ver'),1200);
   });
-})();
+
+  document.getElementById('acepto').addEventListener('click',e=>{
+    const b=e.currentTarget,r=b.getBoundingClientRect();
+    lluvia(r.left+r.width/2,r.top,170,9);setTimeout(()=>lluvia(W*.15,H*.35,80,7),250);setTimeout(()=>lluvia(W*.85,H*.35,80,7),450);
+    b.textContent='¡La princesa dijo que sí! 💕';
+    document.getElementById('respuesta').classList.add('ver');
+    try{navigator.vibrate&&navigator.vibrate([60,40,60])}catch(err){}
+  });
+}
 </script>
 </body>
 </html>
